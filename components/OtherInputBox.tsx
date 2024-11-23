@@ -41,13 +41,15 @@ export default function InputBox({ text, label, placeHolder, onTextChanged }: Pr
 
 const styles = StyleSheet.create({
   inputContainer: {
-    flexDirection: 'row',
-    alignItems: 'flex-start',
+    alignItems: 'center',
     borderWidth: debug ? 1 : 0,
   },
   labelContainer: {
     margin: 4,
-    height: 100,
+    flex: 1,
+    width: "99%",
+    flexDirection: 'row',
+    alignItems: 'flex-end',
     borderWidth: debug ? 1 : 0,
   },
   label: {
@@ -56,15 +58,14 @@ const styles = StyleSheet.create({
   },
   inputLimit: {
     margin: 4,
-    width: 40,
     borderWidth: debug ? 1 : 0,
   },
   input: {
     flex: 1,
     height: 100,
+    width: "99%",
     margin: 4,
     borderWidth: debug ? 1 : 0,
     borderRadius: 10,
-    padding: 10,
   },
 });
