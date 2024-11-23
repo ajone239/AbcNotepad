@@ -1,8 +1,12 @@
 import MainInputBox from "@/components/MainInputBox";
 import OtherInputBox from "@/components/OtherInputBox";
 
+import MaterialIcons from '@expo/vector-icons/MaterialIcons';
+
+
 import { useState } from "react";
 import {
+  Pressable,
   StyleSheet,
   Text,
   TextInput,
@@ -99,7 +103,29 @@ export default function Index() {
           onChangeText={setActivatingEventText}
           value={activatingEventText} />
       </View>
-    </KeyboardAwareScrollView>
+
+      <View style={{ backgroundColor: allTextIsSet() ? "#00ff00" : "#ff0000" }}>
+        <Pressable
+          disabled={!allTextIsSet()}
+          onPress={() => {
+            const abc = {
+              activatingEvent: activatingEventText,
+              belief: beliefText,
+              consequences: consequencesText,
+              forAllBs: forAllBsText,
+              nextTime: nextTimeText,
+            }
+            alert(JSON.stringify(abc))
+            setActivatingEventText("")
+            setBeliefText("")
+            setConsequencesText("")
+            setForAllBsText("")
+            setNextTimeText("")
+          }}>
+          <MaterialIcons name="add" size={38} color="#25292e" />
+
+        </Pressable></View>
+    </KeyboardAwareScrollView >
   );
 }
 const styles = StyleSheet.create({
