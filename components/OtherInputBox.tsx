@@ -41,6 +41,7 @@ export default function InputBox({ text, label, placeHolder, onTextChanged }: Pr
 
 const styles = StyleSheet.create({
   inputContainer: {
+    flex: 1,
     alignItems: 'center',
     borderWidth: debug ? 1 : 0,
   },
@@ -62,7 +63,6 @@ const styles = StyleSheet.create({
   },
   input: {
     flex: 1,
-    height: 100,
     width: "99%",
     margin: 4,
     borderWidth: debug ? 1 : 0,
