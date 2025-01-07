@@ -4,6 +4,8 @@ import OtherInputBox from "@/components/OtherInputBox";
 import MaterialIcons from '@expo/vector-icons/MaterialIcons';
 
 import { useState } from "react";
+import { useDispatch } from 'react-redux';
+import { add } from '../../src/entrySlice';
 import {
     Pressable,
     StyleSheet,
@@ -14,6 +16,8 @@ import {
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view'
 
 export default function Index() {
+    const dispatch = useDispatch()
+
     const [activatingEventText, setActivatingEventText] = useState<string>("")
     const [beliefText, setBeliefText] = useState<string>("")
     const [consequencesText, setConsequencesText] = useState<string>("")
@@ -115,6 +119,7 @@ export default function Index() {
                 <Pressable
                     disabled={!allTextIsSet()}
                     onPress={() => {
+                        // TODO(austin.jones): make this into a model
                         const abc = {
                             activatingEvent: activatingEventText,
                             belief: beliefText,
@@ -122,7 +127,7 @@ export default function Index() {
                             forAllBs: forAllBsText,
                             nextTime: nextTimeText,
                         }
-                        alert(JSON.stringify(abc))
+                        dispatch(add(abc))
                         clearForm();
                     }}>
                     <MaterialIcons name="add" size={38} color="#25292e" />
