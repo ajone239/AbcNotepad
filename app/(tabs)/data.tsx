@@ -11,9 +11,14 @@ export default function AboutScreen() {
             <FlatList
                 data={entries}
                 renderItem={({ item }) =>
-                    <View>
-                        <Text>test!</Text>
-                        <Text>{item.activatingEvent}</Text>
+                    <View style={styles.itemContainer}>
+                        <Text style={styles.text}>test!</Text>
+                        <Text style={styles.text}>{item.activatingEvent}</Text>
+                        <Text style={styles.text}>{item.belief}</Text>
+                        <Text style={styles.text}>{item.consequences}</Text>
+                        <Text style={styles.text}>{item.forAllBs}</Text>
+                        <Text style={styles.text}>{item.nextTime}</Text>
+
                     </View>
                 }
             />
@@ -27,6 +32,11 @@ const styles = StyleSheet.create({
         backgroundColor: '#25292e',
         justifyContent: 'center',
         alignItems: 'center',
+    },
+    itemContainer: {
+        margin: 5,
+        flex: 1,
+        backgroundColor: '#333333',
     },
     text: {
         color: '#fff',
