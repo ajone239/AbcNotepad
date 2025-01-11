@@ -1,6 +1,6 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { increment, decrement, selectCount } from '../../src/counterSlice';
+import { increment, decrement, selectCount } from '@/src/counterSlice';
 
 import { StyleSheet, View, Text, Button } from 'react-native';
 

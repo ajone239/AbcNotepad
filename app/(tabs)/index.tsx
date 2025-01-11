@@ -5,7 +5,7 @@ import MaterialIcons from '@expo/vector-icons/MaterialIcons';
 
 import { useState } from "react";
 import { useDispatch } from 'react-redux';
-import { add } from '../../src/entrySlice';
+import { add } from '@/src/entrySlice';
 import {
     Pressable,
     StyleSheet,

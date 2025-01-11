@@ -1,6 +1,6 @@
 import { Provider } from "react-redux"
 import { Stack } from "expo-router";
-import { store, persistor } from "../src/store"
+import { store, persistor } from "@/src/store"
 import { PersistGate } from 'redux-persist/integration/react';
 
 
