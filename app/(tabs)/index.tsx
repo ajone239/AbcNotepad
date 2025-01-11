@@ -48,7 +48,6 @@ export default function Index() {
             style={styles.container}
             extraScrollHeight={40} // Adjust as needed
         >
-            <Text style={{ height: 30 }}>{allTextIsSet() ? "Can!!!" : "Can't :("}</Text>
             <View style={styles.inner}>
                 <View style={styles.input} >
                     <MainInputBox
@@ -109,11 +108,6 @@ export default function Index() {
                         placeHolder="Plan here"
                     />
                 </View>
-                <TextInput
-                    style={styles.input}
-                    multiline={true}
-                    onChangeText={setActivatingEventText}
-                    value={activatingEventText} />
             </View>
 
             <View style={{ backgroundColor: allTextIsSet() ? "#00ff00" : "#ff0000" }}>
