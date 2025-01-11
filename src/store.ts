@@ -2,7 +2,6 @@ import { configureStore } from '@reduxjs/toolkit';
 import { persistStore, persistReducer } from 'redux-persist';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
-import counterReducer from './counterSlice';
 import entryReducer from './entrySlice';
 
 const persistConfig = {
@@ -14,7 +13,6 @@ const persistedReducer = persistReducer(persistConfig, entryReducer);
 
 const store = configureStore({
     reducer: {
-        counter: counterReducer,
         entries: persistedReducer,
     }
 });

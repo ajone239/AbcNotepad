@@ -11,6 +11,7 @@ export default function AboutScreen() {
             <FlatList
                 data={entries}
                 renderItem={({ item }) =>
+                    // TODO(austin.jones):make this pretty
                     <View style={styles.itemContainer}>
                         <Text style={styles.text}>test!</Text>
                         <Text style={styles.text}>{item.activatingEvent}</Text>
@@ -18,7 +19,6 @@ export default function AboutScreen() {
                         <Text style={styles.text}>{item.consequences}</Text>
                         <Text style={styles.text}>{item.forAllBs}</Text>
                         <Text style={styles.text}>{item.nextTime}</Text>
-
                     </View>
                 }
             />
