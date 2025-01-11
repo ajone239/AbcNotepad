@@ -120,7 +120,6 @@ export default function Index() {
                 <Pressable
                     disabled={!allTextIsSet()}
                     onPress={() => {
-                        // TODO(austin.jones): make this into a model
                         const abc: AbcEntry = {
                             activatingEvent: activatingEventText,
                             belief: beliefText,
