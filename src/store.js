@@ -1,10 +1,24 @@
 import { configureStore } from '@reduxjs/toolkit';
+import { persistStore, persistReducer } from 'redux-persist';
+import AsyncStorage from '@react-native-async-storage/async-storage';
+
 import counterReducer from './counterSlice';
 import entryReducer from './entrySlice';
 
-export const store = configureStore({
+const persistConfig = {
+    key: 'root',
+    storage: AsyncStorage,
+};
+
+const persistedReducer = persistReducer(persistConfig, entryReducer);
+
+const store = configureStore({
     reducer: {
         counter: counterReducer,
-        entries: entryReducer
+        entries: persistedReducer,
     }
 });
+
+const persistor = persistStore(store);
+
+export { store, persistor }
