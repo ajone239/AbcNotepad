@@ -1,9 +1,12 @@
 import MainInputBox from "@/components/MainInputBox";
 import OtherInputBox from "@/components/OtherInputBox";
+import { add } from '@/src/entrySlice';
+import { AbcEntry } from "@/src/AbcEntry";
 
 import MaterialIcons from '@expo/vector-icons/MaterialIcons';
 
 import { useState } from "react";
+import { useDispatch } from 'react-redux';
 import {
     Pressable,
     StyleSheet,
@@ -14,6 +17,8 @@ import {
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view'
 
 export default function Index() {
+    const dispatch = useDispatch()
+
     const [activatingEventText, setActivatingEventText] = useState<string>("")
     const [beliefText, setBeliefText] = useState<string>("")
     const [consequencesText, setConsequencesText] = useState<string>("")
@@ -115,14 +120,14 @@ export default function Index() {
                 <Pressable
                     disabled={!allTextIsSet()}
                     onPress={() => {
-                        const abc = {
+                        const abc: AbcEntry = {
                             activatingEvent: activatingEventText,
                             belief: beliefText,
                             consequences: consequencesText,
                             forAllBs: forAllBsText,
                             nextTime: nextTimeText,
                         }
-                        alert(JSON.stringify(abc))
+                        dispatch(add(abc))
                         clearForm();
                     }}>
                     <MaterialIcons name="add" size={38} color="#25292e" />
