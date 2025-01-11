@@ -10,11 +10,11 @@ import { useDispatch } from 'react-redux';
 import {
     Pressable,
     StyleSheet,
-    Text,
-    TextInput,
     View,
 } from "react-native";
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view'
+import { Theme } from "@/src/colors";
+import CircleButton from "@/components/CircleButton";
 
 export default function Index() {
     const dispatch = useDispatch()
@@ -42,6 +42,18 @@ export default function Index() {
         setForAllBsText("");
         setNextTimeText("");
     }
+
+    const acceptEntry = () => {
+        const abc: AbcEntry = {
+            activatingEvent: activatingEventText,
+            belief: beliefText,
+            consequences: consequencesText,
+            forAllBs: forAllBsText,
+            nextTime: nextTimeText,
+        }
+        dispatch(add(abc))
+        clearForm();
+    };
 
     return (
         <KeyboardAwareScrollView
@@ -110,29 +122,18 @@ export default function Index() {
                 </View>
             </View>
 
-            <View style={{ backgroundColor: allTextIsSet() ? "#00ff00" : "#ff0000" }}>
-                <Pressable
+            <View style={styles.acceptButton}>
+                <CircleButton
                     disabled={!allTextIsSet()}
-                    onPress={() => {
-                        const abc: AbcEntry = {
-                            activatingEvent: activatingEventText,
-                            belief: beliefText,
-                            consequences: consequencesText,
-                            forAllBs: forAllBsText,
-                            nextTime: nextTimeText,
-                        }
-                        dispatch(add(abc))
-                        clearForm();
-                    }}>
-                    <MaterialIcons name="add" size={38} color="#25292e" />
-
-                </Pressable></View>
+                    onPress={acceptEntry} />
+            </View>
         </KeyboardAwareScrollView >
     );
 }
 const styles = StyleSheet.create({
     container: {
         flex: 1,
+        backgroundColor: Theme.background,
     },
     inner: {
         flex: 1,
@@ -140,9 +141,8 @@ const styles = StyleSheet.create({
     },
     input: {
         width: '100%',
-        padding: 5,
+        padding: 2,
         borderWidth: 1,
-        borderColor: '#ccc',
         borderRadius: 5,
     },
     scrollContent: {
@@ -150,5 +150,9 @@ const styles = StyleSheet.create({
         justifyContent: 'center', // Adjusts for vertical alignment
         padding: 20,
     },
+    acceptButton: {
+        alignItems: 'flex-end',
+        margin: 10,
+    }
 });
 

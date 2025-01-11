@@ -1,3 +1,4 @@
+import { Theme } from '@/src/colors';
 import { StyleSheet, Text, TextInput, View } from 'react-native';
 
 const debug = true;
@@ -15,13 +16,13 @@ export default function InputBox({ text, label, placeHolder, onTextChanged }: Pr
         <View style={styles.inputContainer}>
             <View style={styles.labelContainer}>
                 <View style={styles.label}>
-                    <Text>
+                    <Text style={styles.labelText}>
                         {label}
                     </Text>
                 </View>
 
                 <View style={styles.inputLimit}>
-                    <Text>
+                    <Text style={styles.inputLimitText}>
                         {text.length} / {maxLength}
                     </Text>
                 </View>
@@ -48,7 +49,6 @@ const styles = StyleSheet.create({
         borderWidth: debug ? 1 : 0,
     },
     labelContainer: {
-        margin: 5,
         flex: 1,
         width: "99%",
         flexDirection: 'row',
@@ -58,22 +58,36 @@ const styles = StyleSheet.create({
     label: {
         margin: 5,
         borderWidth: debug ? 1 : 0,
+        backgroundColor: Theme.accent,
+        borderRadius: 10,
     },
     inputLimit: {
         margin: 5,
         borderWidth: debug ? 1 : 0,
+        backgroundColor: Theme.accent,
+        borderRadius: 10,
     },
     textInputContainer: {
         flex: 1,
         width: "99%",
         margin: 5,
         borderWidth: debug ? 1 : 0,
+        backgroundColor: Theme.accent,
         borderRadius: 10,
+    },
+    labelText: {
+        color: Theme.text,
+        margin: 5,
+    },
+    inputLimitText: {
+        color: Theme.text,
+        margin: 5,
     },
     input: {
         flex: 1,
         width: "99%",
         margin: 5,
         borderWidth: debug ? 1 : 0,
+        color: Theme.text,
     },
 });
