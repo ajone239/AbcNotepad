@@ -1,11 +1,12 @@
 import MainInputBox from "@/components/MainInputBox";
 import OtherInputBox from "@/components/OtherInputBox";
+import { add } from '@/src/entrySlice';
+import { AbcEntry } from "@/src/AbcEntry";
 
 import MaterialIcons from '@expo/vector-icons/MaterialIcons';
 
 import { useState } from "react";
 import { useDispatch } from 'react-redux';
-import { add } from '@/src/entrySlice';
 import {
     Pressable,
     StyleSheet,
@@ -120,7 +121,7 @@ export default function Index() {
                     disabled={!allTextIsSet()}
                     onPress={() => {
                         // TODO(austin.jones): make this into a model
-                        const abc = {
+                        const abc: AbcEntry = {
                             activatingEvent: activatingEventText,
                             belief: beliefText,
                             consequences: consequencesText,
