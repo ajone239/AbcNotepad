@@ -2,19 +2,16 @@ import MainInputBox from "@/components/MainInputBox";
 import OtherInputBox from "@/components/OtherInputBox";
 import { add } from '@/src/entrySlice';
 import { AbcEntry } from "@/src/AbcEntry";
-
-import MaterialIcons from '@expo/vector-icons/MaterialIcons';
+import CircleButton from "@/components/CircleButton";
 
 import { useState } from "react";
 import { useDispatch } from 'react-redux';
 import {
-    Pressable,
     StyleSheet,
     View,
 } from "react-native";
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view'
 import { Theme } from "@/src/colors";
-import CircleButton from "@/components/CircleButton";
 
 export default function Index() {
     const dispatch = useDispatch()
@@ -50,6 +47,7 @@ export default function Index() {
             consequences: consequencesText,
             forAllBs: forAllBsText,
             nextTime: nextTimeText,
+            dateCreated: new Date(),
         }
         dispatch(add(abc))
         clearForm();

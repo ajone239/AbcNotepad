@@ -13,7 +13,7 @@ export default function AboutScreen() {
                 renderItem={({ item }) =>
                     // TODO(austin.jones):make this pretty
                     <View style={styles.itemContainer}>
-                        <Text style={styles.text}>test!</Text>
+                        <Text style={styles.text}>{item.dateCreated?.toString()}</Text>
                         <Text style={styles.text}>{item.activatingEvent}</Text>
                         <Text style={styles.text}>{item.belief}</Text>
                         <Text style={styles.text}>{item.consequences}</Text>
