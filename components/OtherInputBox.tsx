@@ -1,7 +1,7 @@
 import { Theme } from '@/src/colors';
 import { StyleSheet, Text, TextInput, View } from 'react-native';
 
-const debug = true;
+const debug = false;
 const maxLength = 140;
 
 type Props = {
@@ -35,7 +35,7 @@ export default function InputBox({ text, label, placeHolder, onTextChanged }: Pr
                     maxLength={maxLength}
                     onChangeText={onTextChanged}
                     placeholder={placeHolder}
-                    placeholderTextColor='#aaa'
+                    placeholderTextColor={Theme.accentTextHold}
                     value={text} />
             </View>
         </View>
@@ -76,11 +76,11 @@ const styles = StyleSheet.create({
         borderRadius: 10,
     },
     labelText: {
-        color: Theme.text,
+        color: Theme.accentText,
         margin: 5,
     },
     inputLimitText: {
-        color: Theme.text,
+        color: Theme.accentText,
         margin: 5,
     },
     input: {
@@ -88,6 +88,6 @@ const styles = StyleSheet.create({
         width: "99%",
         margin: 5,
         borderWidth: debug ? 1 : 0,
-        color: Theme.text,
+        color: Theme.accentText,
     },
 });

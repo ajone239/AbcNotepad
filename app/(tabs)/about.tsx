@@ -6,7 +6,7 @@ export default function AboutScreen() {
     return (
         <View style={styles.container}>
             <Text style={styles.text}>An app to look at how you think.</Text>
-            <Text style={styles.text}>By austin jones</Text>
+            <Text style={styles.text}>By Austin Jones</Text>
         </View>
     );
 }

@@ -17,7 +17,7 @@ export default function CircleButton({ onPress, disabled }: Props) {
                     backgroundColor: disabled ? Theme.background : Theme.accent,
                 }}
                 onPress={onPress}>
-                <MaterialIcons name="add" size={38} color={disabled ? '#fff' : '#000'} />
+                <MaterialIcons name="add" size={38} color={disabled ? Theme.text : Theme.background} />
             </Pressable>
         </View>
     )

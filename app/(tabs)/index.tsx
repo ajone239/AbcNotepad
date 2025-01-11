@@ -142,7 +142,6 @@ const styles = StyleSheet.create({
     input: {
         width: '100%',
         padding: 2,
-        borderWidth: 1,
         borderRadius: 5,
     },
     scrollContent: {
