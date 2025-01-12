@@ -6,12 +6,3 @@ export type AbcEntry = {
     nextTime: string;
     dateCreated: Date;
 }
-
-export type AbcEntryStorage = {
-    activatingEvent: string;
-    belief: string;
-    consequences: string;
-    forAllBs: string;
-    nextTime: string;
-    dateCreated: string;
-}
