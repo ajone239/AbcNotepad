@@ -5,8 +5,6 @@ import React from 'react';
 import { StyleSheet, View, Text, Pressable, } from 'react-native';
 import { useDispatch } from 'react-redux';
 
-
-
 export default function AboutScreen() {
     const dispatch = useDispatch()
 
