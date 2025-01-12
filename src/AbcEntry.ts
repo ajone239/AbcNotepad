@@ -4,5 +4,5 @@ export type AbcEntry = {
     consequences: string;
     forAllBs: string;
     nextTime: string;
-    dateCreated: Date;
+    dateCreated: string;
 }

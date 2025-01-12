@@ -1,7 +1,11 @@
 import React from 'react';
 import { useSelector, } from 'react-redux';
 import { selectEntries } from '../../src/entrySlice';
-import { StyleSheet, View, Text, FlatList } from 'react-native';
+import { StyleSheet, View, FlatList } from 'react-native';
+import EntryCard from '@/components/EntryCard';
+import { Theme } from '@/src/colors';
+
+const debug = true;
 
 export default function AboutScreen() {
     const entries = useSelector(selectEntries)
@@ -9,19 +13,15 @@ export default function AboutScreen() {
     return (
         <View style={styles.container}>
             <FlatList
+                contentContainerStyle={styles.cardListContainer}
                 data={entries}
-                renderItem={({ item }) =>
-                    // TODO(austin.jones):make this pretty
-                    <View style={styles.itemContainer}>
-                        <Text style={styles.text}>{item.dateCreated?.toString()}</Text>
-                        <Text style={styles.text}>{item.activatingEvent}</Text>
-                        <Text style={styles.text}>{item.belief}</Text>
-                        <Text style={styles.text}>{item.consequences}</Text>
-                        <Text style={styles.text}>{item.forAllBs}</Text>
-                        <Text style={styles.text}>{item.nextTime}</Text>
-                    </View>
-                }
-            />
+                renderItem={({ item: model }) => {
+                    return (
+                        <View style={styles.cardContainer}>
+                            <EntryCard model={model} />
+                        </View>
+                    )
+                }} />
         </View>
     );
 }
@@ -29,16 +29,18 @@ export default function AboutScreen() {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: '#25292e',
-        justifyContent: 'center',
-        alignItems: 'center',
+        backgroundColor: Theme.background,
+        borderWidth: debug ? 1 : 0,
     },
-    itemContainer: {
-        margin: 5,
+    cardListContainer: {
         flex: 1,
-        backgroundColor: '#333333',
+        backgroundColor: Theme.background,
+        borderWidth: debug ? 1 : 0,
     },
-    text: {
-        color: '#fff',
+    cardContainer: {
+        flex: 1,
+        padding: 2,
+        borderRadius: 5,
+        borderWidth: debug ? 1 : 0,
     },
 });

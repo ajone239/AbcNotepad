@@ -41,13 +41,14 @@ export default function Index() {
     }
 
     const acceptEntry = () => {
+        const now = new Date();
         const abc: AbcEntry = {
             activatingEvent: activatingEventText,
             belief: beliefText,
             consequences: consequencesText,
             forAllBs: forAllBsText,
             nextTime: nextTimeText,
-            dateCreated: new Date(),
+            dateCreated: now.toISOString(),
         }
         dispatch(add(abc))
         clearForm();
@@ -141,11 +142,6 @@ const styles = StyleSheet.create({
         width: '100%',
         padding: 2,
         borderRadius: 5,
-    },
-    scrollContent: {
-        flexGrow: 1,
-        justifyContent: 'center', // Adjusts for vertical alignment
-        padding: 20,
     },
     acceptButton: {
         alignItems: 'flex-end',
