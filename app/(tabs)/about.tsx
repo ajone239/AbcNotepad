@@ -1,3 +1,4 @@
+import { Theme } from '@/src/colors';
 import { clear } from '@/src/entrySlice';
 
 import React from 'react';
@@ -11,13 +12,18 @@ export default function AboutScreen() {
 
     return (
         <View style={styles.container}>
+
             <Text style={styles.text}>An app to look at how you think.</Text>
+
             <Text style={styles.text}>By Austin Jones</Text>
-            <Pressable onPress={() => dispatch(clear())}>
-                <Text style={styles.text}>
-                    Clear
-                </Text>
-            </Pressable>
+
+            <View style={styles.buttonContainer}>
+                <Pressable onPress={() => dispatch(clear())}>
+                    <Text style={styles.text}>
+                        Clear
+                    </Text>
+                </Pressable>
+            </View>
         </View>
     );
 }
@@ -25,7 +31,7 @@ export default function AboutScreen() {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: '#25292e',
+        backgroundColor: Theme.background,
         justifyContent: 'center',
         alignItems: 'center',
     },
@@ -33,6 +39,12 @@ const styles = StyleSheet.create({
         margin: 5,
     },
     text: {
-        color: '#fff',
+        margin: 5,
+        color: Theme.text,
+    },
+    buttonContainer: {
+        margin: 5,
+        borderRadius: 5,
+        backgroundColor: Theme.primary,
     },
 });
