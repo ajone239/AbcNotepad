@@ -1,6 +1,8 @@
-import { AbcEntry } from "./AbcEntry";
+import { AbcEntry, AbcEntryStorage } from "./AbcEntry";
 import { RootState } from "./store";
 import { createSlice } from '@reduxjs/toolkit'
+import createTransform from 'redux-persist/es/createTransform';
+
 
 export interface EntrySliceState {
     value: AbcEntry[],
@@ -16,12 +18,14 @@ export const entrySlice = createSlice({
     reducers: {
         add: (state, action) => {
             state.value = [...state.value, action.payload]
+        },
+        clear: (state) => {
+            state.value = []
         }
     }
 });
 
-
-export const { add } = entrySlice.actions;
+export const { add, clear } = entrySlice.actions;
 
 export const selectEntries = (state: RootState) => state.entries.value;
 
