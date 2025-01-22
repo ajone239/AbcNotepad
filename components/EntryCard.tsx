@@ -3,8 +3,8 @@ import { Theme } from '@/src/colors';
 
 import { StyleSheet, Text, View } from 'react-native';
 
-const debug = true;
-const maxLength = 50;
+const debug = false;
+const maxLength = 45;
 
 type Props = {
     model: AbcEntry;
@@ -40,7 +40,7 @@ export default function EntryCard({ model }: Props) {
         <View style={styles.cardContainer}>
             <View style={styles.dateContainer}>
                 <Text style={styles.dateText}>
-                    {model.dateCreated.toString()}
+                    {(new Date(model.dateCreated)).toLocaleString()}
                 </Text>
             </View>
             <LabeledString label="A:" content={model.activatingEvent} />

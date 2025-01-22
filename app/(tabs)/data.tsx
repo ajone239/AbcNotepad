@@ -1,11 +1,11 @@
 import React from 'react';
 import { useSelector, } from 'react-redux';
-import { selectEntries } from '../../src/entrySlice';
+import { selectEntries } from '@/src/entrySlice';
 import { StyleSheet, View, FlatList } from 'react-native';
 import EntryCard from '@/components/EntryCard';
 import { Theme } from '@/src/colors';
 
-const debug = true;
+const debug = false;
 
 export default function AboutScreen() {
     const entries = useSelector(selectEntries)
@@ -33,7 +33,6 @@ const styles = StyleSheet.create({
         borderWidth: debug ? 1 : 0,
     },
     cardListContainer: {
-        flex: 1,
         backgroundColor: Theme.background,
         borderWidth: debug ? 1 : 0,
     },
