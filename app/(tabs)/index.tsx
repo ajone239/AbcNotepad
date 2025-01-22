@@ -22,8 +22,6 @@ export default function Index() {
     const [forAllBsText, setForAllBsText] = useState<string>("")
     const [nextTimeText, setNextTimeText] = useState<string>("")
 
-    const [canSubmit, setCanSubmit] = useState<boolean>(false)
-
     const allTextIsSet = () => {
         return activatingEventText.length > 0 &&
             beliefText.length > 0 &&
@@ -66,7 +64,6 @@ export default function Index() {
                         label="A:"
                         onTextChanged={(text: string) => {
                             setActivatingEventText(text)
-                            setCanSubmit(allTextIsSet())
                         }}
                         placeHolder="What happened?"
                     />
@@ -78,7 +75,6 @@ export default function Index() {
                         label="B:"
                         onTextChanged={(text: string) => {
                             setBeliefText(text)
-                            setCanSubmit(allTextIsSet())
                         }}
                         placeHolder="What are your beliefs for the event?"
                     />
@@ -90,7 +86,6 @@ export default function Index() {
                         label="C:"
                         onTextChanged={(text: string) => {
                             setConsequencesText(text)
-                            setCanSubmit(allTextIsSet())
                         }}
                         placeHolder="What are the consequences?"
                     />
@@ -102,7 +97,6 @@ export default function Index() {
                         label="For all b in B: b.helpful || b.realistic:"
                         onTextChanged={(text: string) => {
                             setForAllBsText(text)
-                            setCanSubmit(allTextIsSet())
                         }}
                         placeHolder="Think for a friend"
                     />
@@ -114,7 +108,6 @@ export default function Index() {
                         label="What will you do next time?"
                         onTextChanged={(text: string) => {
                             setNextTimeText(text)
-                            setCanSubmit(allTextIsSet())
                         }}
                         placeHolder="Plan here"
                     />
