@@ -12,6 +12,7 @@ import {
 } from "react-native";
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view'
 import { Theme } from "@/src/colors";
+import SubmittedModal from "@/components/SubmittedModal";
 
 export default function Index() {
     const dispatch = useDispatch()
@@ -21,6 +22,9 @@ export default function Index() {
     const [consequencesText, setConsequencesText] = useState<string>("")
     const [forAllBsText, setForAllBsText] = useState<string>("")
     const [nextTimeText, setNextTimeText] = useState<string>("")
+
+    const [isModalVisible, setIsModalVisible] = useState<boolean>(false);
+
 
     const allTextIsSet = () => {
         return activatingEventText.length > 0 &&
@@ -48,8 +52,13 @@ export default function Index() {
             nextTime: nextTimeText,
             dateCreated: now.toISOString(),
         }
+        setIsModalVisible(true)
         dispatch(add(abc))
         clearForm();
+    };
+
+    const onModalClose = () => {
+        setIsModalVisible(false);
     };
 
     return (
@@ -119,6 +128,7 @@ export default function Index() {
                     disabled={!allTextIsSet()}
                     onPress={acceptEntry} />
             </View>
+            <SubmittedModal isVisible={isModalVisible} onClose={onModalClose} />
         </KeyboardAwareScrollView >
     );
 }
