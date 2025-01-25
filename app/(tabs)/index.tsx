@@ -7,7 +7,10 @@ import CircleButton from "@/components/CircleButton";
 import { useState } from "react";
 import { useDispatch } from 'react-redux';
 import {
+    Alert,
+    Pressable,
     StyleSheet,
+    Text,
     View,
 } from "react-native";
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view'
@@ -55,6 +58,14 @@ export default function Index() {
         setIsModalVisible(true)
         dispatch(add(abc))
         clearForm();
+    };
+
+    const alertUsage = () => {
+        Alert.alert(
+            'Warning',
+            'Please fill out all the text boxes before submiting.',
+            [{ text: 'OK' },]
+        );
     };
 
     const onModalClose = () => {
@@ -123,10 +134,21 @@ export default function Index() {
                 </View>
             </View>
 
-            <View style={styles.acceptButton}>
-                <CircleButton
-                    disabled={!allTextIsSet()}
-                    onPress={acceptEntry} />
+            <View style={
+                allTextIsSet()
+                    ? styles.acceptEnableButtonContainer
+                    : styles.acceptDisableButtonContainer
+            }>
+                <Pressable
+                    onPress={
+                        allTextIsSet()
+                            ? acceptEntry
+                            : alertUsage
+                    }>
+                    <Text style={styles.acceptEnableButton}>
+                        Submit
+                    </Text>
+                </Pressable>
             </View>
             <SubmittedModal isVisible={isModalVisible} onClose={onModalClose} />
         </KeyboardAwareScrollView >
@@ -148,9 +170,30 @@ const styles = StyleSheet.create({
         padding: 5,
         borderRadius: 5,
     },
-    acceptButton: {
+    acceptEnableButtonContainer: {
+        alignItems: 'center',
+        justifyContent: 'center',
+        backgroundColor: Theme.primary,
+        borderRadius: 10,
+        borderWidth: 5,
+        borderColor: Theme.accent,
+        marginHorizontal: 30,
+        marginVertical: 10,
+    },
+    acceptEnableButton: {
         alignItems: 'flex-end',
-        marginRight: 10,
-    }
+        color: Theme.text,
+        margin: 10
+    },
+    acceptDisableButtonContainer: {
+        alignItems: 'center',
+        justifyContent: 'center',
+        backgroundColor: Theme.background,
+        borderRadius: 10,
+        borderWidth: 5,
+        borderColor: Theme.accent,
+        marginHorizontal: 30,
+        marginVertical: 10,
+    },
 });
 
