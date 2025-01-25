@@ -139,16 +139,18 @@ const styles = StyleSheet.create({
     },
     inner: {
         flex: 1,
+        marginLeft: 8,
+        marginRight: 8,
         alignItems: 'center',
     },
     input: {
         width: '100%',
-        padding: 2,
+        padding: 5,
         borderRadius: 5,
     },
     acceptButton: {
         alignItems: 'flex-end',
-        margin: 10,
+        marginRight: 10,
     }
 });
 

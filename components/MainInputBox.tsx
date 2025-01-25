@@ -44,21 +44,23 @@ const styles = StyleSheet.create({
     inputContainer: {
         flexDirection: 'row',
         alignItems: 'flex-start',
+        paddingBottom: 6,
         borderWidth: debug ? 1 : 0,
     },
     labelContainer: {
         height: 100,
+        marginRight: 8,
         borderWidth: debug ? 1 : 0,
     },
     label: {
-        margin: 4,
+        margin: 5,
         borderWidth: debug ? 1 : 0,
         backgroundColor: Theme.primary,
         borderRadius: 10,
     },
     inputLimit: {
         margin: 4,
-        width: 40,
+        width: 45,
         borderWidth: debug ? 1 : 0,
         backgroundColor: Theme.primary,
         borderRadius: 10,

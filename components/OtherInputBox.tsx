@@ -50,13 +50,17 @@ const styles = StyleSheet.create({
     },
     labelContainer: {
         flex: 1,
+        marginBottom: 5,
         width: "99%",
         flexDirection: 'row',
+        alignContent: 'space-between',
         alignItems: 'flex-end',
         borderWidth: debug ? 1 : 0,
     },
     label: {
-        margin: 5,
+        marginRight: 10,
+        marginTop: 5,
+        marginBottom: 5,
         borderWidth: debug ? 1 : 0,
         backgroundColor: Theme.accent,
         borderRadius: 10,
@@ -70,7 +74,7 @@ const styles = StyleSheet.create({
     textInputContainer: {
         flex: 1,
         width: "99%",
-        margin: 5,
+        margin: 10,
         borderWidth: debug ? 1 : 0,
         backgroundColor: Theme.accent,
         borderRadius: 10,
