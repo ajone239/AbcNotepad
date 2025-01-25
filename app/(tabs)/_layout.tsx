@@ -22,7 +22,7 @@ export default function TabsLayout() {
             <Tabs.Screen
                 name="data"
                 options={{
-                    title: 'Data',
+                    title: 'Log',
                     tabBarIcon: ({ color, focused }) => (
                         <Ionicons name={focused ? 'git-branch' : 'git-branch-outline'} color={color} size={24} />
                     ),
