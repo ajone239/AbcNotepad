@@ -2,7 +2,6 @@ import MainInputBox from "@/components/MainInputBox";
 import OtherInputBox from "@/components/OtherInputBox";
 import { add } from '@/src/entrySlice';
 import { AbcEntry } from "@/src/AbcEntry";
-import CircleButton from "@/components/CircleButton";
 
 import { useState } from "react";
 import { useDispatch } from 'react-redux';
