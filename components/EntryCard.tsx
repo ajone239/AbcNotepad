@@ -23,7 +23,7 @@ function LabeledString({ label, content }: LabelProps) {
     const cutLength = newlinePos > maxLength ? maxLength : newlinePos;
 
     return (
-        <View style={styles.otherContainer}>
+        <View style={styles.labeledStringContainer}>
             <Text style={styles.labelText}>
                 {label}
             </Text>
@@ -46,6 +46,8 @@ export default function EntryCard({ model }: Props) {
             <LabeledString label="A:" content={model.activatingEvent} />
             <LabeledString label="B:" content={model.belief} />
             <LabeledString label="C:" content={model.consequences} />
+            <LabeledString label="Do Bs Help:" content={model.forAllBs} />
+            <LabeledString label="Next Time:" content={model.nextTime} />
         </View >
     )
 }
@@ -65,7 +67,7 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         borderWidth: debug ? 1 : 0,
     },
-    otherContainer: {
+    labeledStringContainer: {
         marginLeft: 5,
         alignItems: 'flex-start',
         flexDirection: 'row',
