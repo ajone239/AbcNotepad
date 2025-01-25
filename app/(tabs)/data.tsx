@@ -61,12 +61,14 @@ const styles = StyleSheet.create({
     },
     cardListContainer: {
         backgroundColor: Theme.background,
+        margin: 10,
         borderWidth: debug ? 1 : 0,
     },
     cardContainer: {
         flex: 1,
         padding: 2,
-        borderRadius: 5,
+        margin: 5,
+        borderRadius: 10,
         borderWidth: debug ? 1 : 0,
     },
     searchContainer: {
@@ -78,8 +80,7 @@ const styles = StyleSheet.create({
     searchText: {
         borderRadius: 5,
         alignContent: "center",
-        marginLeft: 5,
-        marginRight: 5,
+        marginHorizontal: 10,
         color: Theme.accentText,
     },
 });
