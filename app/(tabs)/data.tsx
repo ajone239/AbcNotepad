@@ -80,6 +80,7 @@ const styles = StyleSheet.create({
     searchText: {
         borderRadius: 5,
         alignContent: "center",
+        marginVertical: 6,
         marginHorizontal: 10,
         color: Theme.accentText,
     },
