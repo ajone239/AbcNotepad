@@ -17,7 +17,9 @@ export default function SubmittedModal({ isVisible, onClose }: Props) {
                     <View style={styles.contentContainer}>
                         <View style={styles.buttonContainer}>
                             <Pressable onPress={onClose} style={styles.button}>
-                                Dismiss
+                                <Text style={styles.buttonText}>
+                                    Dismiss
+                                </Text>
                             </Pressable>
                         </View>
                     </View>
@@ -68,6 +70,9 @@ const styles = StyleSheet.create({
     button: {
         marginVertical: 5,
         marginHorizontal: 30,
+        color: Theme.text,
+    },
+    buttonText: {
         color: Theme.text,
         fontSize: 16,
     },
