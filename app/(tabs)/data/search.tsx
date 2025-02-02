@@ -5,6 +5,7 @@ import { StyleSheet, View, FlatList, TextInput } from 'react-native';
 import EntryCard from '@/components/EntryCard';
 import { Theme } from '@/src/colors';
 import { AbcEntry } from '@/src/AbcEntry';
+import { Link } from 'expo-router';
 
 const debug = false;
 const maxLength = 100;
@@ -37,6 +38,16 @@ export default function AboutScreen() {
                     placeholder={searchPlaceHolder}
                     placeholderTextColor={Theme.accentTextHold}
                     value={searchText} />
+            </View>
+
+            <View style={styles.searchContainer}>
+                <Link
+                    href={{
+                        pathname: '/data/[id]',
+                        params: { id: 'bacon' }
+                    }}>
+                    test test test test
+                </Link>
             </View>
 
             <FlatList

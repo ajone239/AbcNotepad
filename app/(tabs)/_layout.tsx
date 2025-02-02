@@ -20,7 +20,7 @@ export default function TabsLayout() {
             }}
         >
             <Tabs.Screen
-                name="data"
+                name="data/search"
                 options={{
                     title: 'Log',
                     tabBarIcon: ({ color, focused }) => (
