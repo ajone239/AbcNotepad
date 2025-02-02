@@ -4,7 +4,8 @@ import { Theme } from '@/src/colors';
 import { StyleSheet, Text, View } from 'react-native';
 
 const debug = false;
-const maxLength = 45;
+const maxLength = 40;
+const maxLengthSecondary = maxLength - 10;
 
 type Props = {
     model: AbcEntry;
@@ -13,9 +14,10 @@ type Props = {
 type LabelProps = {
     label: string;
     content: string;
+    maxLength: number;
 };
 
-function LabeledString({ label, content }: LabelProps) {
+function LabeledString({ label, content, maxLength }: LabelProps) {
     let newlinePos = 0;
 
     for (; newlinePos < content.length && content[newlinePos] != '\n'; newlinePos++);;
@@ -43,11 +45,17 @@ export default function EntryCard({ model }: Props) {
                     {(new Date(model.dateCreated)).toLocaleString()}
                 </Text>
             </View>
-            <LabeledString label="A:" content={model.activatingEvent} />
-            <LabeledString label="B:" content={model.belief} />
-            <LabeledString label="C:" content={model.consequences} />
-            <LabeledString label="Do Bs Help:" content={model.forAllBs} />
-            <LabeledString label="Next Time:" content={model.nextTime} />
+            <LabeledString label="A:" maxLength={maxLength} content={model.activatingEvent} />
+            <LabeledString label="B:" maxLength={maxLength} content={model.belief} />
+            <LabeledString label="C:" maxLength={maxLength} content={model.consequences} />
+            <LabeledString
+                label="Do Bs Help:"
+                maxLength={maxLengthSecondary}
+                content={model.forAllBs} />
+            <LabeledString
+                label="Next Time:"
+                maxLength={maxLengthSecondary}
+                content={model.nextTime} />
         </View >
     )
 }

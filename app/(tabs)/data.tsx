@@ -65,7 +65,6 @@ const styles = StyleSheet.create({
         borderWidth: debug ? 1 : 0,
     },
     cardContainer: {
-        flex: 1,
         padding: 2,
         margin: 5,
         borderRadius: 10,
