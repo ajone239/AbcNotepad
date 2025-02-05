@@ -7,7 +7,7 @@ import { Theme } from '@/src/colors';
 import { AbcEntry } from '@/src/AbcEntry';
 import { Link } from 'expo-router';
 
-const debug = true;
+const debug = false;
 const maxLength = 100;
 const searchPlaceHolder = "Search here"
 
@@ -49,7 +49,7 @@ export default function AboutScreen() {
                             <Link
                                 style={styles.linkContainer}
                                 href={{
-                                    pathname: './[id]',
+                                    pathname: '/data/[id]',
                                     params: { id: model.dateCreated }
                                 }}>
                                 <EntryCard model={model} />
@@ -75,13 +75,14 @@ const styles = StyleSheet.create({
     },
     linkContainer: {
         flex: 1,
-        borderWidth: debug ? 1 : 0,
+        borderWidth: debug ? 2 : 0,
     },
     cardContainer: {
         padding: 2,
         margin: 5,
         borderRadius: 10,
         borderWidth: debug ? 1 : 0,
+        backgroundColor: Theme.primary,
     },
     searchContainer: {
         borderRadius: 10,

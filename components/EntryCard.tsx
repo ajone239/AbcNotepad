@@ -3,7 +3,7 @@ import { Theme } from '@/src/colors';
 
 import { StyleSheet, Text, View } from 'react-native';
 
-const debug = true;
+const debug = false;
 const maxLength = 40;
 const maxLengthSecondary = maxLength - 10;
 
