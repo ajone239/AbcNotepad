@@ -24,7 +24,10 @@ export default function TabsLayout() {
                 options={{
                     title: 'Log',
                     tabBarIcon: ({ color, focused }) => (
-                        <Ionicons name={focused ? 'git-branch' : 'git-branch-outline'} color={color} size={24} />
+                        <Ionicons
+                            name={focused ? 'git-branch' : 'git-branch-outline'}
+                            color={color}
+                            size={24} />
                     ),
                 }}
             />
@@ -33,7 +36,10 @@ export default function TabsLayout() {
                 options={{
                     title: 'Record',
                     tabBarIcon: ({ color, focused }) => (
-                        <Ionicons name={focused ? 'save' : 'save-outline'} color={color} size={24} />
+                        <Ionicons
+                            name={focused ? 'save' : 'save-outline'}
+                            color={color}
+                            size={24} />
                     ),
                 }}
             />
@@ -43,7 +49,10 @@ export default function TabsLayout() {
                 options={{
                     title: 'About',
                     tabBarIcon: ({ color, focused }) => (
-                        <Ionicons name={focused ? 'information-circle' : 'information-circle-outline'} color={color} size={24} />
+                        <Ionicons
+                            name={focused ? 'information-circle' : 'information-circle-outline'}
+                            color={color}
+                            size={24} />
                     ),
                 }}
             />
