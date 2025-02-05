@@ -7,7 +7,7 @@ import { Theme } from '@/src/colors';
 import { AbcEntry } from '@/src/AbcEntry';
 import { Link } from 'expo-router';
 
-const debug = false;
+const debug = true;
 const maxLength = 100;
 const searchPlaceHolder = "Search here"
 
@@ -40,23 +40,20 @@ export default function AboutScreen() {
                     value={searchText} />
             </View>
 
-            <View style={styles.searchContainer}>
-                <Link
-                    href={{
-                        pathname: '/data/[id]',
-                        params: { id: 'bacon' }
-                    }}>
-                    test test test test
-                </Link>
-            </View>
-
             <FlatList
                 contentContainerStyle={styles.cardListContainer}
                 data={filteredEntries}
                 renderItem={({ item: model }) => {
                     return (
                         <View style={styles.cardContainer}>
-                            <EntryCard model={model} />
+                            <Link
+                                style={styles.linkContainer}
+                                href={{
+                                    pathname: './[id]',
+                                    params: { id: model.dateCreated }
+                                }}>
+                                <EntryCard model={model} />
+                            </Link>
                         </View>
                     )
                 }} />
@@ -71,8 +68,13 @@ const styles = StyleSheet.create({
         borderWidth: debug ? 1 : 0,
     },
     cardListContainer: {
+        flex: 1,
         backgroundColor: Theme.background,
         margin: 10,
+        borderWidth: debug ? 1 : 0,
+    },
+    linkContainer: {
+        flex: 1,
         borderWidth: debug ? 1 : 0,
     },
     cardContainer: {
