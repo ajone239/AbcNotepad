@@ -15,12 +15,14 @@ export default function TabsLayout() {
                 headerShadowVisible: false,
                 headerTintColor: Theme.text,
                 tabBarStyle: {
+                    borderColor: Theme.textHold,
                     backgroundColor: Theme.background,
+                    shadowColor: Theme.background,
                 },
             }}
         >
             <Tabs.Screen
-                name="data/search"
+                name="(data)"
                 options={{
                     title: 'Log',
                     tabBarIcon: ({ color, focused }) => (

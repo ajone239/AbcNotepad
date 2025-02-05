@@ -48,16 +48,13 @@ export default function AboutScreen() {
                         <View style={styles.cardContainer}>
                             <Link
                                 style={styles.linkContainer}
-                                href={{
-                                    pathname: '/data/[id]',
-                                    params: { id: model.dateCreated }
-                                }}>
+                                href={`./${model.dateCreated}`}>
                                 <EntryCard model={model} />
                             </Link>
                         </View>
                     )
                 }} />
-        </View>
+        </View >
     );
 }
 

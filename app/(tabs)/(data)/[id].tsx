@@ -1,6 +1,6 @@
 import { Theme } from "@/src/colors";
 import { selectEntries } from "@/src/entrySlice";
-import { useLocalSearchParams } from "expo-router";
+import { Stack, useLocalSearchParams } from "expo-router";
 import { View, Text, StyleSheet } from "react-native";
 import { useSelector } from "react-redux";
 
@@ -8,11 +8,14 @@ export default function ItemDetailPage() {
     const entries = useSelector(selectEntries)
     const { id } = useLocalSearchParams();
 
+
     const entry = entries.filter(e => e.dateCreated == id)[0];
 
     return (
         <View style={styles.container}>
-            <Text style={styles.text}>{entry.dateCreated}</Text>
+            <Stack.Screen options={{
+                title: (new Date(entry.dateCreated)).toLocaleString()
+            }} />
             <Text style={styles.text}>{entry.activatingEvent}</Text>
             <Text style={styles.text}>{entry.belief}</Text>
             <Text style={styles.text}>{entry.consequences}</Text>
