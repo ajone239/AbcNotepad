@@ -13,7 +13,7 @@ export default function RootLayout() {
                 headerTintColor: Theme.textHold,
             }}>
             <Stack.Screen name="index" options={{ headerShown: false }} />
-            <Stack.Screen name="./[id]" />
+            <Stack.Screen name="[id]" />
         </Stack>
     );
 }
