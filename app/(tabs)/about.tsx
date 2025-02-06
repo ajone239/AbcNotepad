@@ -3,13 +3,14 @@ import { clear } from '@/src/entrySlice';
 
 import React from 'react';
 import { StyleSheet, View, Text, Pressable, } from 'react-native';
-import * as Application from 'expo-application';
+import { nativeApplicationVersion, nativeBuildVersion } from 'expo-application'
+
 
 import { useDispatch } from 'react-redux';
 
 export default function AboutScreen() {
     const dispatch = useDispatch()
-    const version = Application.nativeApplicationVersion ?? "No version";
+    const appVersion = `${nativeApplicationVersionjk}.${nativeBuildVersion}`
 
 
     return (
@@ -19,7 +20,7 @@ export default function AboutScreen() {
 
             <Text style={styles.text}>By Austin Jones</Text>
 
-            <Text style={styles.text}>{version}</Text>
+            <Text style={styles.text}>{appVersion}</Text>
 
             <View style={styles.buttonContainer}>
                 <Pressable onPress={() => dispatch(clear())}>
