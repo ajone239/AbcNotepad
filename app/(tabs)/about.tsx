@@ -3,10 +3,15 @@ import { clear } from '@/src/entrySlice';
 
 import React from 'react';
 import { StyleSheet, View, Text, Pressable, } from 'react-native';
+import { nativeApplicationVersion, nativeBuildVersion } from 'expo-application'
+
+
 import { useDispatch } from 'react-redux';
 
 export default function AboutScreen() {
     const dispatch = useDispatch()
+    const appVersion = `${nativeApplicationVersionjk}.${nativeBuildVersion}`
+
 
     return (
         <View style={styles.container}>
@@ -14,6 +19,8 @@ export default function AboutScreen() {
             <Text style={styles.text}>An app to look at how you think.</Text>
 
             <Text style={styles.text}>By Austin Jones</Text>
+
+            <Text style={styles.text}>{appVersion}</Text>
 
             <View style={styles.buttonContainer}>
                 <Pressable onPress={() => dispatch(clear())}>
