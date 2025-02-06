@@ -19,13 +19,13 @@ export default function ItemDetailPage() {
                     title: (new Date(entry.dateCreated)).toLocaleString()
                 }} />
                 <View style={styles.textContainer}>
-                    <DisplayTextBox text={entry.activatingEvent} label="Activating Event" />
+                    <DisplayTextBox text={entry.activatingEvent} label="Activating Event:" />
                 </View>
                 <View style={styles.textContainer}>
-                    <DisplayTextBox text={entry.belief} label="Beliefs" />
+                    <DisplayTextBox text={entry.belief} label="Beliefs:" />
                 </View>
                 <View style={styles.textContainer}>
-                    <DisplayTextBox text={entry.consequences} label="Consequences" />
+                    <DisplayTextBox text={entry.consequences} label="Consequences:" />
                 </View>
                 <View style={styles.textContainer}>
                     <DisplayTextBox text={entry.forAllBs} label="Do all Bs help?" />

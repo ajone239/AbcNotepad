@@ -10,7 +10,7 @@ type Props = {
 
 export default function DisplayTextBox({ text, label }: Props) {
     return (
-        <View style={styles.inputContainer}>
+        <View style={styles.container}>
             <View style={styles.labelContainer}>
                 <View style={styles.label}>
                     <Text style={styles.labelText}>
@@ -19,7 +19,7 @@ export default function DisplayTextBox({ text, label }: Props) {
                 </View>
             </View>
 
-            <View style={styles.textInputContainer}>
+            <View style={styles.textContainer}>
                 <Text style={styles.text}>
                     {text}
                 </Text>
@@ -29,7 +29,7 @@ export default function DisplayTextBox({ text, label }: Props) {
 }
 
 const styles = StyleSheet.create({
-    inputContainer: {
+    container: {
         flex: 1,
         alignItems: 'center',
         margin: 5,
@@ -44,29 +44,25 @@ const styles = StyleSheet.create({
     },
     label: {
         borderWidth: debug ? 1 : 0,
-        backgroundColor: Theme.accent,
         borderRadius: 10,
     },
-    textInputContainer: {
+    textContainer: {
         flex: 1,
         width: "99%",
-        margin: 10,
-        borderWidth: debug ? 1 : 0,
-        backgroundColor: Theme.accent,
+        margin: 5,
+        borderWidth: 3,
+        borderColor: Theme.accent,
         borderRadius: 10,
     },
     labelText: {
-        color: Theme.accentText,
-        margin: 5,
-    },
-    inputLimitText: {
-        color: Theme.accentText,
-        margin: 5,
+        color: Theme.accent,
+        textDecorationLine: 'underline',
+        fontStyle: 'italic',
     },
     text: {
         flex: 1,
         margin: 5,
         borderWidth: debug ? 1 : 0,
-        color: Theme.accentText,
+        color: Theme.accent,
     },
 });
