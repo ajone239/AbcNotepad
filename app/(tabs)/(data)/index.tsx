@@ -5,6 +5,7 @@ import { StyleSheet, View, FlatList, TextInput } from 'react-native';
 import EntryCard from '@/components/EntryCard';
 import { Theme } from '@/src/colors';
 import { AbcEntry } from '@/src/AbcEntry';
+import { Link } from 'expo-router';
 
 const debug = false;
 const maxLength = 100;
@@ -45,11 +46,15 @@ export default function AboutScreen() {
                 renderItem={({ item: model }) => {
                     return (
                         <View style={styles.cardContainer}>
-                            <EntryCard model={model} />
+                            <Link
+                                style={styles.linkContainer}
+                                href={`./${model.dateCreated}`}>
+                                <EntryCard model={model} />
+                            </Link>
                         </View>
                     )
                 }} />
-        </View>
+        </View >
     );
 }
 
@@ -64,11 +69,15 @@ const styles = StyleSheet.create({
         margin: 10,
         borderWidth: debug ? 1 : 0,
     },
+    linkContainer: {
+        borderWidth: debug ? 2 : 0,
+    },
     cardContainer: {
-        padding: 2,
+        flex: 1,
         margin: 5,
         borderRadius: 10,
         borderWidth: debug ? 1 : 0,
+        backgroundColor: Theme.primary,
     },
     searchContainer: {
         borderRadius: 10,
