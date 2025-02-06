@@ -72,6 +72,7 @@ const styles = StyleSheet.create({
     dateContainer: {
         flex: 1,
         margin: 5,
+        height: 30,
         flexDirection: 'row',
         borderWidth: debug ? 1 : 0,
     },
@@ -83,6 +84,7 @@ const styles = StyleSheet.create({
     },
     dateText: {
         flex: 1,
+        height: '100%',
         textAlign: 'right',
         color: Theme.text,
         borderWidth: debug ? 1 : 0,

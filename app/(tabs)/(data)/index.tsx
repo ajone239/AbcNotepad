@@ -65,17 +65,15 @@ const styles = StyleSheet.create({
         borderWidth: debug ? 1 : 0,
     },
     cardListContainer: {
-        flex: 1,
         backgroundColor: Theme.background,
         margin: 10,
         borderWidth: debug ? 1 : 0,
     },
     linkContainer: {
-        flex: 1,
         borderWidth: debug ? 2 : 0,
     },
     cardContainer: {
-        padding: 2,
+        flex: 1,
         margin: 5,
         borderRadius: 10,
         borderWidth: debug ? 1 : 0,

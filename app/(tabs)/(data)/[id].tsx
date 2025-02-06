@@ -1,7 +1,8 @@
+import DisplayTextBox from "@/components/DisplayTextBox";
 import { Theme } from "@/src/colors";
 import { selectEntries } from "@/src/entrySlice";
 import { Stack, useLocalSearchParams } from "expo-router";
-import { View, Text, StyleSheet } from "react-native";
+import { View, StyleSheet } from "react-native";
 import { useSelector } from "react-redux";
 
 export default function ItemDetailPage() {
@@ -12,27 +13,44 @@ export default function ItemDetailPage() {
     const entry = entries.filter(e => e.dateCreated == id)[0];
 
     return (
-        <View style={styles.container}>
-            <Stack.Screen options={{
-                title: (new Date(entry.dateCreated)).toLocaleString()
-            }} />
-            <Text style={styles.text}>{entry.activatingEvent}</Text>
-            <Text style={styles.text}>{entry.belief}</Text>
-            <Text style={styles.text}>{entry.consequences}</Text>
-            <Text style={styles.text}>{entry.forAllBs}</Text>
-            <Text style={styles.text}>{entry.nextTime}</Text>
+        <View style={styles.containerContainer}>
+            <View style={styles.container}>
+                <Stack.Screen options={{
+                    title: (new Date(entry.dateCreated)).toLocaleString()
+                }} />
+                <View style={styles.textContainer}>
+                    <DisplayTextBox text={entry.activatingEvent} label="Activating Event" />
+                </View>
+                <View style={styles.textContainer}>
+                    <DisplayTextBox text={entry.belief} label="Beliefs" />
+                </View>
+                <View style={styles.textContainer}>
+                    <DisplayTextBox text={entry.consequences} label="Consequences" />
+                </View>
+                <View style={styles.textContainer}>
+                    <DisplayTextBox text={entry.forAllBs} label="Do all Bs help?" />
+                </View>
+                <View style={styles.textContainer}>
+                    <DisplayTextBox text={entry.nextTime} label="What about next time?" />
+                </View>
+            </View>
         </View>
     );
 }
 
 const styles = StyleSheet.create({
-    container: {
+    containerContainer: {
         flex: 1,
-        justifyContent: "center",
-        alignItems: "center",
         backgroundColor: Theme.background,
     },
-    text: {
+    container: {
+        flex: 1,
+        margin: 10,
+        alignItems: "flex-start",
+    },
+    textContainer: {
+        width: '98%',
+        flex: 1,
         color: Theme.text
     },
 });
