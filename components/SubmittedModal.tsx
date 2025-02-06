@@ -1,4 +1,5 @@
 import { Theme } from "@/src/colors";
+import Ionicons from "@expo/vector-icons/Ionicons";
 import { Modal, View, StyleSheet, Text, Pressable } from "react-native";
 
 type Props = {
@@ -12,9 +13,14 @@ export default function SubmittedModal({ isVisible, onClose }: Props) {
             <View style={styles.modalContainer}>
                 <View style={styles.modalContent}>
                     <View style={styles.titleContainer}>
-                        <Text style={styles.title}>Thanks for sharing</Text>
+                        <Text style={styles.title}>
+                            Thanks for sharing
+                        </Text>
                     </View>
                     <View style={styles.contentContainer}>
+                        <View style={styles.emojiContainer}>
+                            <Ionicons name="happy-outline" color={Theme.background} size={75} />
+                        </View>
                         <View style={styles.buttonContainer}>
                             <Pressable onPress={onClose} style={styles.button}>
                                 <Text style={styles.buttonText}>
@@ -37,7 +43,7 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
     },
     modalContent: {
-        height: '20%',
+        height: '30%',
         width: '66%',
         backgroundColor: Theme.accent,
         borderRadius: 10,
@@ -45,39 +51,44 @@ const styles = StyleSheet.create({
         borderColor: Theme.textHold,
     },
     titleContainer: {
-        height: '16%',
-        backgroundColor: Theme.primary,
+        height: '20%',
         borderTopRightRadius: 8,
         borderTopLeftRadius: 8,
         paddingHorizontal: 20,
-        flexDirection: 'row',
         alignItems: 'center',
-        justifyContent: 'space-between',
+        justifyContent: 'center',
+        alignContent: 'center',
     },
     contentContainer: {
         flex: 1,
-        flexDirection: 'row-reverse',
+        alignItems: 'center',
+        justifyContent: 'center',
+    },
+    emojiContainer: {
+        margin: 10,
+        borderRadius: 5,
         alignItems: 'center',
         justifyContent: 'center',
     },
     buttonContainer: {
-        margin: 10,
+        margin: 20,
         borderRadius: 5,
         alignItems: 'center',
         justifyContent: 'center',
         backgroundColor: Theme.background,
     },
     button: {
-        marginVertical: 5,
-        marginHorizontal: 30,
+        marginVertical: 10,
+        marginHorizontal: 40,
         color: Theme.text,
     },
     buttonText: {
         color: Theme.text,
-        fontSize: 16,
+        fontSize: 18,
     },
     title: {
-        color: Theme.text,
-        fontSize: 16,
+        color: Theme.background,
+        textAlign: 'center',
+        fontSize: 22,
     },
 });
