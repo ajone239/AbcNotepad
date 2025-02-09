@@ -2,7 +2,7 @@ import { Theme } from '@/src/colors';
 import { clear } from '@/src/entrySlice';
 
 import React from 'react';
-import { StyleSheet, View, Text, Pressable, Alert, Platform, } from 'react-native';
+import { StyleSheet, View, Text, Pressable, Alert, Platform } from 'react-native';
 import { nativeApplicationVersion, nativeBuildVersion } from 'expo-application'
 
 
