@@ -4,11 +4,11 @@ import { StyleSheet, Text, View } from 'react-native';
 const debug = false;
 
 type Props = {
-    text: string;
     label: string;
+    children: any;
 };
 
-export default function DisplayTextBox({ text, label }: Props) {
+export default function DisplayTextBox({ label, children }: Props) {
     return (
         <View style={styles.container}>
             <View style={styles.labelContainer}>
@@ -16,11 +16,8 @@ export default function DisplayTextBox({ text, label }: Props) {
                     {label}
                 </Text>
             </View>
-
-            <View style={styles.textContainer}>
-                <Text style={styles.text}>
-                    {text}
-                </Text>
+            <View style={styles.childContainer}>
+                {children}
             </View>
         </View>
     )
@@ -28,7 +25,6 @@ export default function DisplayTextBox({ text, label }: Props) {
 
 const styles = StyleSheet.create({
     container: {
-        flex: 1,
         alignItems: 'center',
         margin: 5,
         borderWidth: debug ? 1 : 0,
@@ -40,23 +36,14 @@ const styles = StyleSheet.create({
         alignItems: 'flex-end',
         borderWidth: debug ? 1 : 0,
     },
-    textContainer: {
-        flex: 1,
+    childContainer: {
         width: "99%",
         margin: 5,
-        borderWidth: 3,
-        borderColor: Theme.accent,
-        borderRadius: 10,
     },
     labelText: {
         color: Theme.accent,
         textDecorationLine: 'underline',
+        fontSize: 20,
         fontStyle: 'italic',
-    },
-    text: {
-        flex: 1,
-        margin: 5,
-        borderWidth: debug ? 1 : 0,
-        color: Theme.accent,
     },
 });
