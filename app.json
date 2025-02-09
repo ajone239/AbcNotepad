@@ -10,7 +10,11 @@
     "newArchEnabled": true,
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "com.anonymous.AbcNotepad"
+      "bundleIdentifier": "com.anonymous.AbcNotepad",
+      "icon": {
+        "dark": "./assets/images/dark_icon.png",
+        "light": "./assets/images/light_icon.png"
+      }
     },
     "android": {
       "adaptiveIcon": {
