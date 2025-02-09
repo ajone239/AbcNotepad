@@ -2,7 +2,7 @@ import { Theme } from '@/src/colors';
 import { clear } from '@/src/entrySlice';
 
 import React from 'react';
-import { StyleSheet, View, Text, Pressable, Alert, Platform } from 'react-native';
+import { StyleSheet, View, Text, Pressable, Alert, Platform, Linking } from 'react-native';
 import { nativeApplicationVersion, nativeBuildVersion } from 'expo-application'
 
 
@@ -32,7 +32,9 @@ export default function AboutScreen() {
         );
     };
 
-
+    const openWebsite = () => {
+        Linking.openURL("https://github.com/ajone239/AbcNotepad/issues/new?template=Blank+issue");
+    };
 
     return (
         <View style={styles.container}>
@@ -60,6 +62,16 @@ export default function AboutScreen() {
                 <View style={styles.dockPanel}>
                     <Text style={styles.leftText}>Version:</Text>
                     <Text style={styles.rightText}>{appVersion}</Text>
+                </View>
+                <Text style={styles.text}>
+                    Have feedback?
+                </Text>
+                <View style={styles.buttonContainer}>
+                    <Pressable onPress={openWebsite}>
+                        <Text style={styles.buttonText}>
+                            Sumbit any bugs/issues here.
+                        </Text>
+                    </Pressable>
                 </View>
             </Section>
         </View>
