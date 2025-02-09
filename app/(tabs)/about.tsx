@@ -10,7 +10,7 @@ import { useDispatch } from 'react-redux';
 
 export default function AboutScreen() {
     const dispatch = useDispatch()
-    const appVersion = `${nativeApplicationVersionjk}.${nativeBuildVersion}`
+    const appVersion = `${nativeApplicationVersion}.${nativeBuildVersion}`
 
 
     return (
