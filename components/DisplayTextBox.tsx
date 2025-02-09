@@ -12,11 +12,9 @@ export default function DisplayTextBox({ text, label }: Props) {
     return (
         <View style={styles.container}>
             <View style={styles.labelContainer}>
-                <View style={styles.label}>
-                    <Text style={styles.labelText}>
-                        {label}
-                    </Text>
-                </View>
+                <Text style={styles.labelText}>
+                    {label}
+                </Text>
             </View>
 
             <View style={styles.textContainer}>
@@ -41,10 +39,6 @@ const styles = StyleSheet.create({
         alignContent: 'space-between',
         alignItems: 'flex-end',
         borderWidth: debug ? 1 : 0,
-    },
-    label: {
-        borderWidth: debug ? 1 : 0,
-        borderRadius: 10,
     },
     textContainer: {
         flex: 1,
