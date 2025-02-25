@@ -6,31 +6,28 @@ import { StyleSheet, View, Text } from 'react-native';
 
 import Section from '@/components/Section';
 
+const tutorialText = `
+NOTE: This is use for theory see "Background Info".
+
+
+`
+
+
 export default function InfoScreen() {
     return (
         <View style={styles.container}>
             <Section label='How to use:'>
                 <Text style={styles.text}>
-                    {`
-ABC is a journaling tactic for helping with CBT.
-The through shot is "something has happened and you don't like how it made you feel let's look at it"
-
-Therein it opens with three questions:
-
-A. What was the Activating event?
-B. What are your Beliefs about this event?
-C. What are the Consequences of those beliefs.
-
-Now that we have that in the paper, we can ask 2 incisive questions:
-
-- Are all the beliefs in B realistic or helpful?
-- What can we do next time A happens?
-                    `}
+                    {tutorialText}
                 </Text>
-            </Section><Section label='Things to remember:'>
+            </Section>
+            <Section label='Things to remember:'>
                 <Text style={styles.text}>
                     {`
-                        - Keep it short
+- Keep entries short don't explain your way out of a feeling.
+- Be honest about what you think and feel.
+- Give yourself grace.
+- It will be ok <3
                     `}
                 </Text>
             </Section>
@@ -40,6 +37,7 @@ Now that we have that in the paper, we can ask 2 incisive questions:
 
 const styles = StyleSheet.create({
     container: {
+        padding: 10,
         flex: 1,
         backgroundColor: Theme.background,
     },
@@ -77,5 +75,4 @@ const styles = StyleSheet.create({
         color: Theme.text,
         margin: 10
     },
-
 });

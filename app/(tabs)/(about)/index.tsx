@@ -33,25 +33,19 @@ export default function AboutScreen() {
 
     return (
         <View style={styles.container}>
-            <Section label='Description:'>
+            <Section label='Manuals:'>
                 <Link
                     style={styles.linkContainer}
                     href={`./tutorial`}>
                     <Text style={styles.linkText}>
                         // Tutorial //
                     </Text>
-                    <Text style={styles.otherLinkText}>
-                        {`>`}
-                    </Text>
                 </Link>
                 <Link
                     style={styles.linkContainer}
                     href={`./info`}>
                     <Text style={styles.linkText}>
-                        // Info //
-                    </Text>
-                    <Text style={styles.otherLinkText}>
-                        {`>`}
+                        // Background Info //
                     </Text>
                 </Link>
 
@@ -112,7 +106,6 @@ const styles = StyleSheet.create({
         color: Theme.text,
     },
     linkText: {
-        flex: 1,
         margin: 10,
         fontSize: 20,
         color: Theme.text,
@@ -144,6 +137,8 @@ const styles = StyleSheet.create({
         margin: 10
     },
     linkContainer: {
+        flexDirection: 'row',
+        alignContent: 'space-between',
         margin: 10,
         padding: 10,
         borderColor: Theme.text,

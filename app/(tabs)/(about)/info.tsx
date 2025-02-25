@@ -11,7 +11,9 @@ export default function InfoScreen() {
         <ScrollView style={styles.container}>
             <Section label='What is this app:'>
                 <Text style={styles.text}>
-                    Welcome to ABC Notebook -- a journalling app that aims to give easy access to the ABC model of Albert Ellis from CBT.
+                    {`
+Welcome to ABC Notebook -- a journalling app that aims to give easy access to the ABC model of Albert Ellis from CBT.
+                    `}
                 </Text>
             </Section>
 
@@ -34,8 +36,18 @@ The through shot is "something has happened and you don't like how it made you f
 Therein it opens with three questions:
 
 A. What was the Activating event?
+
+    An Activating event (sometimes referered to as an adversity) is a bad thing that has happened: a bad grade, a hard meeting, or what have you. This event is the thing that ultimately leads to the later Consequences.
+
 B. What are your Beliefs about this event?
+
+    Beliefs are many things, but for our purposes here they are thoughts about or surrounding the event that started this entry.
+
 C. What are the Consequences of those beliefs.
+
+    The Consequences are the bad things that come from our beliefs of the adversity. These are the things that we ultimately don't want to change.
+
+It can be useful to take these down out of order. It is helpful to take them down in the order of importance to the experience. You may be experience may bad emotions, so you take down your "C" then introspect to find the Activating event and corresponding beliefs. Something clearly bad may happen (your "A") then you can use "B" and "C" to process it -- Ad nauseam.
 
 Now that we have that in the paper, we can ask 2 incisive questions:
 
@@ -88,5 +100,4 @@ const styles = StyleSheet.create({
         color: Theme.text,
         margin: 10
     },
-
 });

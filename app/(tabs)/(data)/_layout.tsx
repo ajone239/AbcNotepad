@@ -12,7 +12,10 @@ export default function RootLayout() {
                 headerShadowVisible: false,
                 headerTintColor: Theme.textHold,
             }}>
-            <Stack.Screen name="index" options={{ headerShown: false }} />
+            <Stack.Screen name="index" options={{
+                title: "Log",
+                headerShown: false
+            }} />
             <Stack.Screen name="[id]" />
         </Stack>
     );
