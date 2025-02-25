@@ -53,6 +53,22 @@ Now that we have that in the paper, we can ask 2 incisive questions:
 
 - Are all the beliefs in B realistic or helpful?
 - What can we do next time A happens?
+
+For my money, this first question is the main help of this method. Are your beliefs realistic? Is this huge conviction that you are worthless realistic? Given all the things in life you've done and are are you REALISTICALLY worthless -- I'd hazard no. But if they are realistic that's also fine, we can use this place to engage with the reality of our reasoning. Second and just as important, are they helpful. If you have a thought about yourself that is based in reality but is destructive and detractive -- it isn't helpful. If it isn't helping you then we should reassess it. This question is a wonderful framework for assessing your beliefs in a way that is readily constructive to helping yourself.
+
+The plan for next time is a bit self explanatory, but it's worth considering. Take some time to really think about 1) how you can change what you believe to help your consequences 2) what little actions could mitigate your bad experience.
+                    `}
+                </Text>
+            </Section>
+
+            <Section label='Closing Thoughts:'>
+                <Text style={styles.text}>
+                    {`
+That is the theory of reflecting through ABC.
+It is worth stating, these questions are great and helpful but not magic.
+The onus of honest reflection still lies with you.
+It is also worth stating that you can do it.
+I hope this has and will be helpful.
                     `}
                 </Text>
             </Section>

@@ -12,7 +12,6 @@ NOTE: This is use for theory see "Background Info".
 
 `
 
-
 export default function InfoScreen() {
     return (
         <View style={styles.container}>
