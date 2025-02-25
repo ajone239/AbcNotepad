@@ -110,13 +110,6 @@ const styles = StyleSheet.create({
         fontSize: 20,
         color: Theme.text,
     },
-    otherLinkText: {
-        flex: 1,
-        textAlign: 'right',
-        margin: 10,
-        fontSize: 20,
-        color: Theme.text,
-    },
     text: {
         margin: 10,
         color: Theme.text,
@@ -137,8 +130,6 @@ const styles = StyleSheet.create({
         margin: 10
     },
     linkContainer: {
-        flexDirection: 'row',
-        alignContent: 'space-between',
         margin: 10,
         padding: 10,
         borderColor: Theme.text,

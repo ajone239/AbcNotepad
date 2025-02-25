@@ -78,38 +78,8 @@ const styles = StyleSheet.create({
         flex: 1,
         backgroundColor: Theme.background,
     },
-    dockPanel: {
-        flexDirection: 'row',
-        alignContent: 'space-between',
-    },
-    leftText: {
-        margin: 10,
-        textAlign: 'left',
-        color: Theme.text,
-    },
-    rightText: {
-        margin: 10,
-        flex: 1,
-        textAlign: 'right',
-        color: Theme.text,
-    },
     text: {
         margin: 10,
         color: Theme.text,
-    },
-    buttonContainer: {
-        alignItems: 'center',
-        justifyContent: 'center',
-        backgroundColor: Theme.primary,
-        borderRadius: 10,
-        borderWidth: 5,
-        borderColor: Theme.accent,
-        marginHorizontal: 30,
-        marginVertical: 10,
-    },
-    buttonText: {
-        alignItems: 'flex-end',
-        color: Theme.text,
-        margin: 10
     },
 });
