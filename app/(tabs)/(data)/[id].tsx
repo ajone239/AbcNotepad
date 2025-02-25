@@ -9,7 +9,6 @@ export default function ItemDetailPage() {
     const entries = useSelector(selectEntries)
     const { id } = useLocalSearchParams();
 
-
     const entry = entries.filter(e => e.dateCreated == id)[0];
 
     return (
