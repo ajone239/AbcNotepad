@@ -1,7 +1,7 @@
 import { Theme } from '@/src/colors';
 
 import React from 'react';
-import { StyleSheet, View, Text } from 'react-native';
+import { StyleSheet, Text, ScrollView } from 'react-native';
 
 
 import Section from '@/components/Section';
@@ -9,7 +9,7 @@ import Section from '@/components/Section';
 
 export default function InfoScreen() {
     return (
-        <View style={styles.container}>
+        <ScrollView style={styles.container}>
             <Section label='NOTE:'>
                 <Text style={styles.text}>
                     This is just use for theory see "Background Info".
@@ -26,7 +26,7 @@ A. What was the Activating event?
 B. What are your Beliefs about this event?
 C. What are the Consequences of those beliefs.
 
-With that done use the next 2 input boxes to reflect on your experience with these questions.
+With that done, use the next 2 input boxes to reflect on your experience with these questions.
 
 - Are all the beliefs in B realistic or helpful?
 - What can we do next time A happens?
@@ -41,11 +41,11 @@ You can now submit. Great Job!
 - Keep entries short don't explain your way out of a feeling.
 - Be honest about what you think and feel.
 - Give yourself grace.
-- It will be ok <3
+- It will be okay <3
                     `}
                 </Text>
             </Section>
-        </View>
+        </ScrollView>
     );
 }
 

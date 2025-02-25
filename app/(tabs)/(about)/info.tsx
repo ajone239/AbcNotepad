@@ -20,7 +20,7 @@ Welcome to ABC Notebook -- a journalling app that aims to give easy access to th
             <Section label='What is CBT:'>
                 <Text style={styles.text}>
                     {`
-Cognitive Behavioral Therapy operates under the tagline "change your thoughts -- change your emotions".
+Cognitive Behavioral Therapy operates under the tag line "change your thoughts -- change your emotions".
 
 You change your thoughts by observing them and working at correction. You change your emotions to not be so dang depressed all the time.
                     `}
@@ -37,7 +37,7 @@ Therein it opens with three questions:
 
 A. What was the Activating event?
 
-    An Activating event (sometimes referered to as an adversity) is a bad thing that has happened: a bad grade, a hard meeting, or what have you. This event is the thing that ultimately leads to the later Consequences.
+    An Activating event (sometimes referred to as an adversity) is a bad thing that has happened: a bad grade, a hard meeting, or what have you. This event is the thing that ultimately leads to the later Consequences.
 
 B. What are your Beliefs about this event?
 
