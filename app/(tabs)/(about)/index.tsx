@@ -8,11 +8,11 @@ import { nativeApplicationVersion, nativeBuildVersion } from 'expo-application'
 
 import { useDispatch } from 'react-redux';
 import Section from '@/components/Section';
+import { Link } from 'expo-router';
 
 export default function AboutScreen() {
     const dispatch = useDispatch()
     const appVersion = `${nativeApplicationVersion}.${nativeBuildVersion}`
-
 
     const clearEntries = () => dispatch(clear());
 
@@ -21,13 +21,8 @@ export default function AboutScreen() {
             'Warning',
             'This will clear ALL of your entries. Do you wish to proceed?',
             [
-                {
-                    text: 'Yes',
-                    onPress: clearEntries,
-                },
-                {
-                    text: 'No',
-                },
+                { text: 'Yes', onPress: clearEntries, },
+                { text: 'No', },
             ]
         );
     };
@@ -39,9 +34,27 @@ export default function AboutScreen() {
     return (
         <View style={styles.container}>
             <Section label='Description:'>
-                <Text style={styles.text}>
-                    Welcome to ABC Notebook -- a journalling app that aims to give easy access to the ABC model of Albert Ellis from CBT.
-                </Text>
+                <Link
+                    style={styles.linkContainer}
+                    href={`./tutorial`}>
+                    <Text style={styles.linkText}>
+                        // Tutorial //
+                    </Text>
+                    <Text style={styles.otherLinkText}>
+                        {`>`}
+                    </Text>
+                </Link>
+                <Link
+                    style={styles.linkContainer}
+                    href={`./info`}>
+                    <Text style={styles.linkText}>
+                        // Info //
+                    </Text>
+                    <Text style={styles.otherLinkText}>
+                        {`>`}
+                    </Text>
+                </Link>
+
             </Section>
 
             <Section label='Settings:'>
@@ -98,6 +111,19 @@ const styles = StyleSheet.create({
         textAlign: 'right',
         color: Theme.text,
     },
+    linkText: {
+        flex: 1,
+        margin: 10,
+        fontSize: 20,
+        color: Theme.text,
+    },
+    otherLinkText: {
+        flex: 1,
+        textAlign: 'right',
+        margin: 10,
+        fontSize: 20,
+        color: Theme.text,
+    },
     text: {
         margin: 10,
         color: Theme.text,
@@ -117,5 +143,10 @@ const styles = StyleSheet.create({
         color: Theme.text,
         margin: 10
     },
-
+    linkContainer: {
+        margin: 10,
+        padding: 10,
+        borderColor: Theme.text,
+        borderBottomWidth: 1,
+    },
 });
