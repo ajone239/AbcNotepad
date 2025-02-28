@@ -127,26 +127,26 @@ export default function Index() {
                 </View>
             </View>
 
-            <View style={
+            {
                 allTextIsSet()
-                    ? styles.acceptEnableButtonContainer
-                    : styles.acceptDisableButtonContainer
-            }>
-                <Pressable
-                    onPress={
-                        allTextIsSet()
-                            ? acceptEntry
-                            : alertUsage
-                    }>
-                    <Text style={
-                        allTextIsSet()
-                            ? styles.acceptEnableButton
-                            : styles.acceptDisableButton
-                    }>
-                        Submit
-                    </Text>
-                </Pressable>
-            </View>
+                    ?
+                    <View style={styles.acceptEnableButtonContainer}>
+                        <Pressable onPress={acceptEntry}>
+                            <Text style={styles.acceptEnableButton}>
+                                Submit
+                            </Text>
+                        </Pressable>
+                    </View>
+                    :
+                    <View style={styles.acceptDisableButtonContainer}>
+                        <Pressable onPress={alertUsage}>
+                            <Text style={styles.acceptDisableButton}>
+                                Please fill out all fields.
+                            </Text>
+                        </Pressable>
+                    </View>
+            }
+
             <SubmittedModal isVisible={isModalVisible} onClose={onModalClose} />
         </KeyboardAwareScrollView >
     );
