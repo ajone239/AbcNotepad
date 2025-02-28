@@ -40,6 +40,7 @@ export default function Index() {
 
     const acceptEntry = () => {
         const now = new Date();
+
         const abc: AbcEntry = {
             activatingEvent: activatingEventText,
             belief: beliefText,
