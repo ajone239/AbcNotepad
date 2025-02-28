@@ -23,7 +23,7 @@ const forestTheme: AppTheme = {
     text: '#e9dfb4',
     textHold: '#50601a',
     accentText: '#75554a',
-    accentTextHold: '#bc8c80',
+    accentTextHold: '#a5857a',
     primary: '#83934d',
     accent: '#b8c88d',
 };
