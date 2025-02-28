@@ -6,14 +6,13 @@ import {
     Dimensions,
     StyleSheet,
     View,
-    Text,
 } from 'react-native';
 import { LineChart } from 'react-native-chart-kit'
 import { useSelector } from 'react-redux';
 
 
 const millisInADay = 24 * 60 * 60 * 1000;
-const daysToLookBack = 14;
+const daysToLookBack = 7;
 
 function sameDay(d1: Date, d2: Date) {
     return d1.getFullYear() === d2.getFullYear() &&
@@ -39,7 +38,9 @@ export default function Chart() {
         day: '2-digit',
     }
 
-    const datesLabels = dates.map(day => day.toLocaleDateString('en-US', options).toString())
+    const datesLabels = dates
+        .map(day => day.toLocaleDateString('en-US', options).toString())
+        .filter((_, i) => (i % 3) == 0)
 
     const datesCounts = entriesDates.reduce(
         (acc, val) => {
@@ -71,7 +72,7 @@ export default function Chart() {
                     color: (opacity = 1) => `rgba(255, 255, 255, ${opacity})`,
                     labelColor: (opacity = 1) => `rgba(255, 255, 255, ${opacity})`,
                     propsForDots: {
-                        r: "6",
+                        r: "5",
                         strokeWidth: "2",
                         stroke: Theme.text,
                     }

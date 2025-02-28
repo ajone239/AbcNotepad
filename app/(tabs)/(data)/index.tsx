@@ -20,11 +20,14 @@ export default function AboutScreen() {
     }
 
     const filteredEntries = entries.filter((entry: AbcEntry) => {
+        const localeDate = (new Date(entry.dateCreated)).toLocaleString();
+
         return entry.activatingEvent.toLowerCase().includes(searchText.toLowerCase()) ||
             entry.belief.toLowerCase().includes(searchText.toLowerCase()) ||
             entry.consequences.toLowerCase().includes(searchText.toLowerCase()) ||
             entry.forAllBs.toLowerCase().includes(searchText.toLowerCase()) ||
-            entry.nextTime.toLowerCase().includes(searchText.toLowerCase());
+            entry.nextTime.toLowerCase().includes(searchText.toLowerCase()) ||
+            localeDate.includes(searchText.toLowerCase());
     });
 
     return (
