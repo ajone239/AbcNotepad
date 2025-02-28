@@ -40,7 +40,6 @@ export default function Chart() {
 
     const datesLabels = dates
         .map(day => day.toLocaleDateString('en-US', options).toString())
-        .filter((_, i) => (i % 3) == 0)
 
     const datesCounts = entriesDates.reduce(
         (acc, val) => {
