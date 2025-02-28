@@ -58,6 +58,7 @@ const styles = StyleSheet.create({
         borderWidth: debug ? 1 : 0,
     },
     label: {
+        paddingHorizontal: 5,
         marginRight: 10,
         marginTop: 5,
         marginBottom: 5,

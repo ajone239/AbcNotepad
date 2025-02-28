@@ -1,20 +1,14 @@
 import MainInputBox from "@/components/MainInputBox";
 import OtherInputBox from "@/components/OtherInputBox";
+import SubmittedModal from "@/components/SubmittedModal";
 import { add } from '@/src/entrySlice';
 import { AbcEntry } from "@/src/AbcEntry";
+import { Theme } from "@/src/colors";
 
 import { useState } from "react";
 import { useDispatch } from 'react-redux';
-import {
-    Alert,
-    Pressable,
-    StyleSheet,
-    Text,
-    View,
-} from "react-native";
+import { Alert, Pressable, StyleSheet, Text, View } from "react-native";
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view'
-import { Theme } from "@/src/colors";
-import SubmittedModal from "@/components/SubmittedModal";
 
 export default function Index() {
     const dispatch = useDispatch()
@@ -113,7 +107,7 @@ export default function Index() {
                 <View style={styles.input} >
                     <OtherInputBox
                         text={forAllBsText}
-                        label="For all b in B: b.helpful || b.realistic:"
+                        label="Are all beliefs in be realistic or helpful?"
                         onTextChanged={(text: string) => {
                             setForAllBsText(text)
                         }}
@@ -133,22 +127,26 @@ export default function Index() {
                 </View>
             </View>
 
-            <View style={
+            {
                 allTextIsSet()
-                    ? styles.acceptEnableButtonContainer
-                    : styles.acceptDisableButtonContainer
-            }>
-                <Pressable
-                    onPress={
-                        allTextIsSet()
-                            ? acceptEntry
-                            : alertUsage
-                    }>
-                    <Text style={styles.acceptEnableButton}>
-                        Submit
-                    </Text>
-                </Pressable>
-            </View>
+                    ?
+                    <View style={styles.acceptEnableButtonContainer}>
+                        <Pressable onPress={acceptEntry}>
+                            <Text style={styles.acceptEnableButton}>
+                                Submit
+                            </Text>
+                        </Pressable>
+                    </View>
+                    :
+                    <View style={styles.acceptDisableButtonContainer}>
+                        <Pressable onPress={alertUsage}>
+                            <Text style={styles.acceptDisableButton}>
+                                Please fill out all fields.
+                            </Text>
+                        </Pressable>
+                    </View>
+            }
+
             <SubmittedModal isVisible={isModalVisible} onClose={onModalClose} />
         </KeyboardAwareScrollView >
     );
@@ -184,13 +182,18 @@ const styles = StyleSheet.create({
         color: Theme.text,
         margin: 10
     },
+    acceptDisableButton: {
+        alignItems: 'flex-end',
+        color: Theme.textHold,
+        margin: 10
+    },
     acceptDisableButtonContainer: {
         alignItems: 'center',
         justifyContent: 'center',
         backgroundColor: Theme.background,
         borderRadius: 10,
         borderWidth: 5,
-        borderColor: Theme.accent,
+        borderColor: Theme.primary,
         marginHorizontal: 30,
         marginVertical: 10,
     },

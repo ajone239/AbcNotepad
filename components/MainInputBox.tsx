@@ -49,7 +49,7 @@ const styles = StyleSheet.create({
     },
     labelContainer: {
         height: 100,
-        marginRight: 8,
+        marginRight: 5,
         borderWidth: debug ? 1 : 0,
     },
     label: {
