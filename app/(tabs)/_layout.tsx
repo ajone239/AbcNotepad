@@ -7,8 +7,8 @@ export default function TabsLayout() {
     return (
         <Tabs
             screenOptions={{
-                tabBarActiveTintColor: Theme.primary,
-                tabBarInactiveTintColor: Theme.accent,
+                tabBarActiveTintColor: Theme.accent,
+                tabBarInactiveTintColor: Theme.primary,
                 headerStyle: {
                     backgroundColor: Theme.background,
                 },
@@ -27,7 +27,7 @@ export default function TabsLayout() {
                     title: 'Log',
                     tabBarIcon: ({ color, focused }) => (
                         <Ionicons
-                            name={focused ? 'git-branch' : 'git-branch-outline'}
+                            name={focused ? 'file-tray-full' : 'file-tray-outline'}
                             color={color}
                             size={24} />
                     ),
@@ -39,7 +39,7 @@ export default function TabsLayout() {
                     title: 'Record',
                     tabBarIcon: ({ color, focused }) => (
                         <Ionicons
-                            name={focused ? 'save' : 'save-outline'}
+                            name={focused ? 'document-text' : 'document-outline'}
                             color={color}
                             size={24} />
                     ),
