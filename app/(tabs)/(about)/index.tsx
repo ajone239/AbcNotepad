@@ -27,8 +27,12 @@ export default function AboutScreen() {
         );
     };
 
-    const openWebsite = () => {
+    const openIssueSubmit = () => {
         Linking.openURL("https://github.com/ajone239/AbcNotepad/issues/new?template=Blank+issue");
+    };
+
+    const openDontation = () => {
+        Linking.openURL("https://buymeacoffee.com/ajones53ajl");
     };
 
     return (
@@ -66,17 +70,30 @@ export default function AboutScreen() {
                     <Text style={styles.leftText}>Created By:</Text>
                     <Text style={styles.rightText}>Austin Jones</Text>
                 </View>
+
                 <View style={styles.dockPanel}>
                     <Text style={styles.leftText}>Version:</Text>
                     <Text style={styles.rightText}>{appVersion}</Text>
                 </View>
+
                 <Text style={styles.text}>
                     Have feedback?
                 </Text>
                 <View style={styles.buttonContainer}>
-                    <Pressable onPress={openWebsite}>
+                    <Pressable onPress={openIssueSubmit}>
                         <Text style={styles.buttonText}>
                             Sumbit any bugs/issues here.
+                        </Text>
+                    </Pressable>
+                </View>
+
+                <Text style={styles.text}>
+                    Consider Supporting:
+                </Text>
+                <View style={styles.buttonContainer}>
+                    <Pressable onPress={openIssueSubmit}>
+                        <Text style={styles.buttonText}>
+                            Buy me a coffee!
                         </Text>
                     </Pressable>
                 </View>
