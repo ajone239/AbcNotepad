@@ -91,7 +91,7 @@ export default function AboutScreen() {
                     Consider Supporting:
                 </Text>
                 <View style={styles.buttonContainer}>
-                    <Pressable onPress={openIssueSubmit}>
+                    <Pressable onPress={openDontation}>
                         <Text style={styles.buttonText}>
                             Buy me a coffee!
                         </Text>
