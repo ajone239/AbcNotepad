@@ -61,7 +61,7 @@ export default function Chart() {
             <LineChart
                 data={data}
                 width={Dimensions.get("window").width} // from react-native
-                height={Dimensions.get("window").height}
+                height={Dimensions.get("window").height - 50}
                 yAxisInterval={1} // optional, defaults to 1
                 chartConfig={{
                     backgroundColor: Theme.background,
@@ -78,7 +78,7 @@ export default function Chart() {
                 }}
                 bezier
                 style={{
-                    marginVertical: 8,
+                    marginVertical: 10,
                     borderRadius: 10,
                 }}
             />
