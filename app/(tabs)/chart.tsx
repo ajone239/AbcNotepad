@@ -1,7 +1,8 @@
+import SegmentedSelector, { SelectionDetails } from '@/components/SegmentedSelector';
 import { Theme } from '@/src/colors';
 import { selectEntries } from '@/src/entrySlice';
 
-import React from 'react';
+import React, { useState } from 'react';
 import {
     Dimensions,
     StyleSheet,
@@ -10,36 +11,31 @@ import {
 import { LineChart } from 'react-native-chart-kit'
 import { useSelector } from 'react-redux';
 
-type Lookback = {
-    label: string;
+type Lookback = SelectionDetails & {
     lookback: number;
-    freqency: number;
+    frequency: number;
 };
-
 
 const lookbacks: Lookback[] = [
     {
         label: "7d",
         lookback: 7,
-        freqency: 1,
+        frequency: 1,
     },
     {
         label: "14d",
         lookback: 14,
-        freqency: 2,
+        frequency: 2,
     },
     {
         label: "1mo",
         lookback: 31,
-        freqency: 3,
+        frequency: 4,
     }
 ]
 
 const millisInADay = 24 * 60 * 60 * 1000;
 
-const lookbackIndex = 2
-const daysToLookBack = lookbacks[lookbackIndex].lookback;
-const dateLabelFrequency = lookbacks[lookbackIndex].freqency;
 
 function sameDay(d1: Date, d2: Date) {
     return d1.getFullYear() === d2.getFullYear() &&
@@ -49,6 +45,9 @@ function sameDay(d1: Date, d2: Date) {
 
 
 export default function Chart() {
+    const [daysToLookBack, setDaysToLookBack] = useState<number>(lookbacks[0].lookback);
+    const [dateLabelFrequency, setDateLabelFrequency] = useState<number>(lookbacks[0].frequency);
+
     const entries = useSelector(selectEntries)
 
     const entriesDates = entries.map(entry => new Date(entry.dateCreated))
@@ -86,11 +85,21 @@ export default function Chart() {
 
     return (
         <View style={styles.container}>
+            <View style={styles.selectorContainer}>
+                <SegmentedSelector
+                    details={lookbacks}
+                    onSelected={(detail) => {
+                        const lb = detail as Lookback;
+                        setDaysToLookBack(lb.lookback)
+                        setDateLabelFrequency(lb.frequency)
+                    }} />
+            </View>
+
             <LineChart
                 data={data}
-                width={Dimensions.get("window").width} // from react-native
-                height={Dimensions.get("window").height - 50}
-                yAxisInterval={1} // optional, defaults to 1
+                width={Dimensions.get("window").width - 10}
+                height={Dimensions.get("window").height - 100}
+                yAxisInterval={1}
                 chartConfig={{
                     backgroundColor: Theme.background,
                     backgroundGradientFrom: Theme.background,
@@ -118,6 +127,10 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         backgroundColor: Theme.background,
+    },
+    selectorContainer: {
+        width: 160,
+        margin: 5,
     },
     text: {
         color: Theme.text,
