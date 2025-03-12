@@ -10,9 +10,36 @@ import {
 import { LineChart } from 'react-native-chart-kit'
 import { useSelector } from 'react-redux';
 
+type Lookback = {
+    label: string;
+    lookback: number;
+    freqency: number;
+};
+
+
+const lookbacks: Lookback[] = [
+    {
+        label: "7d",
+        lookback: 7,
+        freqency: 1,
+    },
+    {
+        label: "14d",
+        lookback: 14,
+        freqency: 2,
+    },
+    {
+        label: "1mo",
+        lookback: 31,
+        freqency: 3,
+    }
+]
 
 const millisInADay = 24 * 60 * 60 * 1000;
-const daysToLookBack = 7;
+
+const lookbackIndex = 2
+const daysToLookBack = lookbacks[lookbackIndex].lookback;
+const dateLabelFrequency = lookbacks[lookbackIndex].freqency;
 
 function sameDay(d1: Date, d2: Date) {
     return d1.getFullYear() === d2.getFullYear() &&
@@ -40,6 +67,7 @@ export default function Chart() {
 
     const datesLabels = dates
         .map(day => day.toLocaleDateString('en-US', options).toString())
+        .filter((_, i) => (i % dateLabelFrequency) == 0);
 
     const datesCounts = entriesDates.reduce(
         (acc, val) => {
