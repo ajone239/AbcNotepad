@@ -104,7 +104,7 @@ export default function Chart() {
                     backgroundColor: Theme.background,
                     backgroundGradientFrom: Theme.background,
                     backgroundGradientTo: Theme.background,
-                    decimalPlaces: 0,
+                    decimalPlaces: 1,
                     color: (opacity = 1) => `rgba(255, 255, 255, ${opacity})`,
                     labelColor: (opacity = 1) => `rgba(255, 255, 255, ${opacity})`,
                     propsForDots: {
