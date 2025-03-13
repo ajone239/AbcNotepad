@@ -48,11 +48,11 @@ export default function Chart() {
     const [daysToLookBack, setDaysToLookBack] = useState<number>(lookbacks[0].lookback);
     const [dateLabelFrequency, setDateLabelFrequency] = useState<number>(lookbacks[0].frequency);
 
-    const entries = useSelector(selectEntries)
+    const entries = useSelector(selectEntries) || []
 
     const entriesDates = entries.map(entry => new Date(entry.dateCreated))
 
-    const maxDate = entriesDates.reduce((p, v) => (p > v ? p : v));
+    const maxDate = entriesDates.reduce((p, v) => (p > v ? p : v), new Date());
 
     const dates = Array.from(
         new Array(daysToLookBack),
