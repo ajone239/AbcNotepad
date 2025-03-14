@@ -86,17 +86,6 @@ export default function AboutScreen() {
                         </Text>
                     </Pressable>
                 </View>
-
-                <Text style={styles.text}>
-                    Consider Supporting:
-                </Text>
-                <View style={styles.buttonContainer}>
-                    <Pressable onPress={openDontation}>
-                        <Text style={styles.buttonText}>
-                            Buy me a coffee!
-                        </Text>
-                    </Pressable>
-                </View>
             </Section>
         </View>
     );
