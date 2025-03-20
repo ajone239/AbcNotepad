@@ -51,13 +51,17 @@ Now that we have that in the paper, we can ask 2 incisive questions:
 - Are all the beliefs in B realistic or helpful?
 - What can we do next time A happens?
 
-For my money, this first question is the main help of this method.
+For my money, this first question is the main help of this method, so lets break down the two parts:
 
-First, are your beliefs realistic? Is this huge conviction that you are worthless realistic? Given all the things in life you've done and have become, are you REALISTICALLY worthless -- I'd hazard no. But if they are realistic that's also fine, we can use this question to engage with the reality of our reasoning.
+- Are your beliefs realistic?
 
-Second and just as important, are they helpful? If you have a thought about yourself that is based in reality but is destructive and detractive -- it isn't helpful. If it isn't helping you then we should reassess it. This question is a wonderful framework for assessing your beliefs in a way that is readily constructive to helping yourself.
+    Is this huge conviction that you are worthless realistic? Given all the things in life you've done and have become, are you REALISTICALLY worthless -- I'd hazard no. But if they are realistic that's also fine, we can use this question to engage with the reality of our reasoning.
 
-The plan for next time is a bit self-explanatory, but it's worth considering. Take some time to really think about 1) how you can change what you believe to help your consequences and 2) what little actions could mitigate your bad experience. Use this to chart a realistic plan for next time.
+- Are your thoughts helpful?
+
+    If you have a thought about yourself that is based in reality but is destructive and detractive -- it isn't helpful. If it isn't helping you then we should reassess it. This question is a wonderful framework for assessing your beliefs in a way that is readily constructive to helping yourself.
+
+Onto the second question, the plan for next time is a bit self-explanatory, but it's worth considering. Take some time to really think about 1) how you can change what you believe to help your consequences and 2) what little actions could mitigate your bad experience. Use this to chart a realistic plan for next time.
                     `}
                 </Text>
             </Section>
