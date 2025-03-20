@@ -12,7 +12,7 @@ export default function InfoScreen() {
         <ScrollView style={styles.container}>
             <Section label='NOTE:'>
                 <Text style={styles.text}>
-                    This is just use for theory see "Background Info".
+                    This is information of usage for more theory see "Background Info".
                 </Text>
             </Section>
             <Section label='How to use:'>
@@ -20,13 +20,13 @@ export default function InfoScreen() {
                     {`
 As soon as you feel like you need to record an ABC Entry:
 
-In the order of significance to your experience, answer the following questions in the 3 main input boxes.
+In the order of significance to your experience, answer the following questions in the three main input boxes.
 
 A. What was the Activating event?
 B. What are your Beliefs about this event?
-C. What are the Consequences of those beliefs.
+C. What are the Consequences of those beliefs?
 
-With that done, use the next 2 input boxes to reflect on your experience with these questions.
+With that done, use the next two input boxes to reflect on your experience with these questions.
 
 - Are all the beliefs in B realistic or helpful?
 - What can we do next time A happens?
