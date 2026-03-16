@@ -10,7 +10,7 @@ import { Link } from 'expo-router';
 const maxLength = 100;
 const searchPlaceHolder = "Search here"
 
-export default function AboutScreen() {
+export default function LogScreen() {
     const entries = useSelector(selectEntries)
     const [searchText, setSearchText] = useState<string>("")
 
