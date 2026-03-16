@@ -1,6 +1,6 @@
 import { AbcEntry } from "./AbcEntry";
 import { RootState } from "./store";
-import { createSlice } from '@reduxjs/toolkit'
+import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 
 
 export interface EntrySliceState {
@@ -15,7 +15,7 @@ export const entrySlice = createSlice({
     name: 'entries',
     initialState: initialState,
     reducers: {
-        add: (state, action) => {
+        add: (state, action: PayloadAction<AbcEntry>) => {
             state.value = [action.payload, ...state.value]
         },
         clear: (state) => {
