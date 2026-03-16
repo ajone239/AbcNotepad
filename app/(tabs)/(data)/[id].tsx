@@ -2,14 +2,29 @@ import DisplayTextBox from "@/components/DisplayTextBox";
 import { Theme } from "@/src/colors";
 import { selectEntries } from "@/src/entrySlice";
 import { Stack, useLocalSearchParams } from "expo-router";
-import { View, StyleSheet } from "react-native";
+import { Text, View, StyleSheet } from "react-native";
 import { useSelector } from "react-redux";
 
 export default function ItemDetailPage() {
     const entries = useSelector(selectEntries)
     const { id } = useLocalSearchParams();
 
-    const entry = entries.filter(e => e.dateCreated == id)[0];
+    const entry = entries.find(e => e.dateCreated === id);
+
+    if (!entry) {
+        return (
+            <View style={styles.containerContainer}>
+                <Stack.Screen options={{ title: "Not Found" }} />
+                <View style={styles.container}>
+                    <View style={styles.textContainer}>
+                        <Text>
+                            Entry not found.
+                        </Text>
+                    </View>
+                </View>
+            </View>
+        );
+    }
 
     return (
         <View style={styles.containerContainer}>
