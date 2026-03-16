@@ -57,7 +57,7 @@ export default function Index() {
     const alertUsage = () => {
         Alert.alert(
             'Warning',
-            'Please fill out all the text boxes before submiting.',
+            'Please fill out all the text boxes before submitting.',
             [{ text: 'OK' },]
         );
     };

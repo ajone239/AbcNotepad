@@ -82,7 +82,7 @@ export default function AboutScreen() {
                 <View style={styles.buttonContainer}>
                     <Pressable onPress={openIssueSubmit}>
                         <Text style={styles.buttonText}>
-                            Sumbit any bugs/issues here.
+                            Submit any bugs/issues here.
                         </Text>
                     </Pressable>
                 </View>
