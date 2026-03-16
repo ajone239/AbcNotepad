@@ -9,7 +9,7 @@ export default function ItemDetailPage() {
     const entries = useSelector(selectEntries)
     const { id } = useLocalSearchParams();
 
-    const entry = entries.find(e => e.dateCreated === id);
+    const entry = entries.find(e => e.id === id);
 
     if (!entry) {
         return (

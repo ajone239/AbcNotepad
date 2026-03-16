@@ -7,6 +7,7 @@ import { Theme } from "@/src/colors";
 
 import { useState } from "react";
 import { useDispatch } from 'react-redux';
+import { randomUUID } from 'expo-crypto';
 import { Alert, Pressable, StyleSheet, Text, View } from "react-native";
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view'
 
@@ -42,6 +43,7 @@ export default function Index() {
         const now = new Date();
 
         const abc: AbcEntry = {
+            id: randomUUID(),
             activatingEvent: activatingEventText,
             belief: beliefText,
             consequences: consequencesText,

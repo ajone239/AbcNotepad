@@ -51,7 +51,7 @@ export default function AboutScreen() {
                         <View style={styles.cardContainer}>
                             <Link
                                 style={styles.linkContainer}
-                                href={`./${model.dateCreated}`}>
+                                href={`./${model.id}`}>
                                 <EntryCard model={model} />
                             </Link>
                         </View>
