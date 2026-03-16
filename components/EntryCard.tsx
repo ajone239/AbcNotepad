@@ -1,9 +1,8 @@
 import { AbcEntry } from "@/src/AbcEntry";
 import { Theme } from '@/src/colors';
+import { DEV } from '@/src/dev';
 
 import { StyleSheet, Text, View } from 'react-native';
-
-const debug = false;
 const maxLength = 40;
 const maxLengthSecondary = maxLength - 10;
 
@@ -45,6 +44,9 @@ export default function EntryCard({ model }: Props) {
                     {(new Date(model.dateCreated)).toLocaleString()}
                 </Text>
             </View>
+            {DEV && (
+                <Text style={styles.devIdText}>id: {model.id}</Text>
+            )}
             <LabeledString label="A:" maxLength={maxLength} content={model.activatingEvent} />
             <LabeledString label="B:" maxLength={maxLength} content={model.belief} />
             <LabeledString label="C:" maxLength={maxLength} content={model.consequences} />
@@ -65,7 +67,7 @@ const styles = StyleSheet.create({
         flex: 1,
         margin: 5,
         alignItems: 'flex-start',
-        borderWidth: debug ? 1 : 0,
+        borderWidth: DEV ? 1 : 0,
         borderRadius: 10,
         backgroundColor: Theme.primary,
     },
@@ -74,29 +76,35 @@ const styles = StyleSheet.create({
         margin: 5,
         height: 30,
         flexDirection: 'row',
-        borderWidth: debug ? 1 : 0,
+        borderWidth: DEV ? 1 : 0,
     },
     labeledStringContainer: {
         marginLeft: 5,
         alignItems: 'flex-start',
         flexDirection: 'row',
-        borderWidth: debug ? 1 : 0,
+        borderWidth: DEV ? 1 : 0,
     },
     dateText: {
         flex: 1,
         height: '100%',
         textAlign: 'right',
         color: Theme.text,
-        borderWidth: debug ? 1 : 0,
+        borderWidth: DEV ? 1 : 0,
     },
     labelText: {
         color: Theme.textHold,
         margin: 5,
-        borderWidth: debug ? 1 : 0,
+        borderWidth: DEV ? 1 : 0,
     },
     contentText: {
         color: Theme.text,
         margin: 5,
-        borderWidth: debug ? 1 : 0,
+        borderWidth: DEV ? 1 : 0,
+    },
+    devIdText: {
+        color: Theme.textHold,
+        fontSize: 10,
+        marginLeft: 5,
+        marginBottom: 3,
     },
 });

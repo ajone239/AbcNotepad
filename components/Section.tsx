@@ -1,7 +1,6 @@
 import { Theme } from '@/src/colors';
+import { DEV } from '@/src/dev';
 import { StyleSheet, Text, View } from 'react-native';
-
-const debug = false;
 
 type Props = {
     label: string;
@@ -27,14 +26,14 @@ const styles = StyleSheet.create({
     container: {
         alignItems: 'center',
         margin: 5,
-        borderWidth: debug ? 1 : 0,
+        borderWidth: DEV ? 1 : 0,
     },
     labelContainer: {
         width: "99%",
         flexDirection: 'row',
         alignContent: 'space-between',
         alignItems: 'flex-end',
-        borderWidth: debug ? 1 : 0,
+        borderWidth: DEV ? 1 : 0,
     },
     childContainer: {
         width: "99%",

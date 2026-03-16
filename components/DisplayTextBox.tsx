@@ -1,7 +1,6 @@
 import { Theme } from '@/src/colors';
+import { DEV } from '@/src/dev';
 import { StyleSheet, Text, View } from 'react-native';
-
-const debug = false;
 
 type Props = {
     text: string;
@@ -31,14 +30,14 @@ const styles = StyleSheet.create({
         flex: 1,
         alignItems: 'center',
         margin: 5,
-        borderWidth: debug ? 1 : 0,
+        borderWidth: DEV ? 1 : 0,
     },
     labelContainer: {
         width: "99%",
         flexDirection: 'row',
         alignContent: 'space-between',
         alignItems: 'flex-end',
-        borderWidth: debug ? 1 : 0,
+        borderWidth: DEV ? 1 : 0,
     },
     textContainer: {
         flex: 1,
@@ -56,7 +55,7 @@ const styles = StyleSheet.create({
     text: {
         flex: 1,
         margin: 5,
-        borderWidth: debug ? 1 : 0,
+        borderWidth: DEV ? 1 : 0,
         color: Theme.accent,
     },
 });

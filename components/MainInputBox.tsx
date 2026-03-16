@@ -1,7 +1,6 @@
 import { Theme } from '@/src/colors';
+import { DEV } from '@/src/dev';
 import { StyleSheet, Text, TextInput, View } from 'react-native';
-
-const debug = false;
 const maxLength = 140;
 
 type Props = {
@@ -45,23 +44,23 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         alignItems: 'flex-start',
         paddingBottom: 6,
-        borderWidth: debug ? 1 : 0,
+        borderWidth: DEV ? 1 : 0,
     },
     labelContainer: {
         height: 100,
         marginRight: 5,
-        borderWidth: debug ? 1 : 0,
+        borderWidth: DEV ? 1 : 0,
     },
     label: {
         margin: 5,
-        borderWidth: debug ? 1 : 0,
+        borderWidth: DEV ? 1 : 0,
         backgroundColor: Theme.primary,
         borderRadius: 10,
     },
     inputLimit: {
         margin: 4,
         width: 45,
-        borderWidth: debug ? 1 : 0,
+        borderWidth: DEV ? 1 : 0,
         backgroundColor: Theme.primary,
         borderRadius: 10,
     },
@@ -69,7 +68,7 @@ const styles = StyleSheet.create({
         flex: 1,
         height: 100,
         margin: 4,
-        borderWidth: debug ? 1 : 0,
+        borderWidth: DEV ? 1 : 0,
         borderRadius: 10,
         padding: 10,
         backgroundColor: Theme.primary,

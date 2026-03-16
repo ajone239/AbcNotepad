@@ -1,7 +1,6 @@
 import { Theme } from '@/src/colors';
+import { DEV } from '@/src/dev';
 import { StyleSheet, Text, TextInput, View } from 'react-native';
-
-const debug = false;
 const maxLength = 140;
 
 type Props = {
@@ -46,7 +45,7 @@ const styles = StyleSheet.create({
     inputContainer: {
         flex: 1,
         alignItems: 'center',
-        borderWidth: debug ? 1 : 0,
+        borderWidth: DEV ? 1 : 0,
     },
     labelContainer: {
         flex: 1,
@@ -55,20 +54,20 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         alignContent: 'space-between',
         alignItems: 'flex-end',
-        borderWidth: debug ? 1 : 0,
+        borderWidth: DEV ? 1 : 0,
     },
     label: {
         paddingHorizontal: 5,
         marginRight: 10,
         marginTop: 5,
         marginBottom: 5,
-        borderWidth: debug ? 1 : 0,
+        borderWidth: DEV ? 1 : 0,
         backgroundColor: Theme.accent,
         borderRadius: 10,
     },
     inputLimit: {
         margin: 5,
-        borderWidth: debug ? 1 : 0,
+        borderWidth: DEV ? 1 : 0,
         backgroundColor: Theme.accent,
         borderRadius: 10,
     },
@@ -76,7 +75,7 @@ const styles = StyleSheet.create({
         flex: 1,
         width: "99%",
         margin: 10,
-        borderWidth: debug ? 1 : 0,
+        borderWidth: DEV ? 1 : 0,
         backgroundColor: Theme.accent,
         borderRadius: 10,
     },
@@ -92,7 +91,7 @@ const styles = StyleSheet.create({
         flex: 1,
         width: "99%",
         margin: 5,
-        borderWidth: debug ? 1 : 0,
+        borderWidth: DEV ? 1 : 0,
         color: Theme.accentText,
     },
 });

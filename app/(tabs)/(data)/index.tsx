@@ -5,9 +5,8 @@ import { StyleSheet, View, FlatList, TextInput } from 'react-native';
 import EntryCard from '@/components/EntryCard';
 import { Theme } from '@/src/colors';
 import { AbcEntry } from '@/src/AbcEntry';
+import { DEV } from '@/src/dev';
 import { Link } from 'expo-router';
-
-const debug = false;
 const maxLength = 100;
 const searchPlaceHolder = "Search here"
 
@@ -65,28 +64,28 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         backgroundColor: Theme.background,
-        borderWidth: debug ? 1 : 0,
+        borderWidth: DEV ? 1 : 0,
     },
     cardListContainer: {
         backgroundColor: Theme.background,
         margin: 10,
-        borderWidth: debug ? 1 : 0,
+        borderWidth: DEV ? 1 : 0,
     },
     linkContainer: {
-        borderWidth: debug ? 2 : 0,
+        borderWidth: DEV ? 2 : 0,
     },
     cardContainer: {
         flex: 1,
         margin: 5,
         borderRadius: 10,
-        borderWidth: debug ? 1 : 0,
+        borderWidth: DEV ? 1 : 0,
         backgroundColor: Theme.primary,
     },
     searchContainer: {
         borderRadius: 10,
         backgroundColor: Theme.accent,
         margin: 10,
-        borderWidth: debug ? 1 : 0,
+        borderWidth: DEV ? 1 : 0,
     },
     searchText: {
         borderRadius: 5,
